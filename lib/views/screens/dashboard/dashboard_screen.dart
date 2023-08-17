@@ -50,16 +50,16 @@ class DashboardScreen extends StatelessWidget {
                               child: Text('1'),
                             ),
                             SizedBox(
-                              child: Text('1'),
+                              child: Text('2'),
                             ),
                             SizedBox(
-                              child: Text('1'),
+                              child: Text('3'),
                             ),
                             SizedBox(
-                              child: Text('1'),
+                              child: Text('4'),
                             ),
                             SizedBox(
-                              child: Text('1'),
+                              child: Text('5'),
                             ),
                           ],
                           onPageChanged: (index) {

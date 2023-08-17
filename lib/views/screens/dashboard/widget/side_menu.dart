@@ -51,13 +51,13 @@ class SideMenu extends StatelessWidget {
                       press: () {
                         controller.onOptionButtonTap(index);
                       },
-                      color: controller.selectedOptionIndex == index
+                      color: controller.selectedOptionIndex.value == index
                           ? Colors.white
                           : primaryColor,
-                      textColor: controller.selectedOptionIndex == index
+                      textColor: controller.selectedOptionIndex.value == index
                           ? Colors.black
                           : Colors.white,
-                      imageColor: controller.selectedOptionIndex == index
+                      imageColor: controller.selectedOptionIndex.value == index
                           ? primaryColor
                           : Colors.white,
                     ),
