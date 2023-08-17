@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hllive/core/constant/colors.dart';
 
 import '../../responsive.dart';
 import 'dashboard_controller.dart';
@@ -14,8 +15,12 @@ class DashboardScreen extends StatelessWidget {
         init: DashboardController(),
         builder: (dashboardController) {
           return Scaffold(
+            backgroundColor: primaryColor.withOpacity(0.8),
             key: dashboardController.scaffoldKey,
-            drawer: SideMenu(),
+            drawer: Padding(
+              padding: const EdgeInsets.all(28.0),
+              child: SideMenu(),
+            ),
             body: SafeArea(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,

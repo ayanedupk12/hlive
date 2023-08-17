@@ -12,77 +12,94 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: primaryColor,
+      backgroundColor: Colors.transparent,
       child: Column(
         children: [
-          // Add the user accounts drawer header here
           SizedBox(
             height: 20,
           ),
-          // CircleAvatar(
-          //   radius: 60, // Use responsive_sizer for radius
-          // //  backgroundImage:AssetImage(AppAssets.imgProfile),
-          //   child: Image.asset(AppAssets.imgProfile),
-          // ),
           Container(
-            height: 100,
-            width: 100,
-            decoration:
-                BoxDecoration(color: whiteColor, shape: BoxShape.circle),
+            width: 80,
             child: Center(
-              child: Text("LOGO"),
+              child: Text(
+                "LOGO",
+                style: TextStyle(color: Colors.blueAccent, fontSize: 30),
+              ),
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 5,
           ),
-
-          Expanded(
-            child: ListView.builder(
-              itemCount: drawerItems.length,
-              itemBuilder: (context, index) {
-                final drawerItem = drawerItems[index];
-                return Obx(
-                  () => Padding(
-                    padding: const EdgeInsets.only(top: 5, bottom: 5),
-                    child: DrawerListTile(
-                      title: drawerItem.title,
-                      svgSrc: drawerItem.svgSrc,
-                      press: () {
-                        controller.onOptionButtonTap(index);
-                      },
-                      color: controller.selectedOptionIndex.value == index
-                          ? Colors.white
-                          : primaryColor,
-                      textColor: controller.selectedOptionIndex.value == index
-                          ? Colors.black
-                          : Colors.white,
-                      imageColor: controller.selectedOptionIndex.value == index
-                          ? primaryColor
-                          : Colors.white,
+          SizedBox(
+            height: context.height * 0.85,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: primaryColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  children: [
+                    // Add the user accounts drawer header here
+                    SizedBox(
+                      height: 20,
                     ),
-                  ),
-                );
-              },
-            ),
-          ),
-          const Spacer(),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: ElevatedButtonWidget(
-              height: 50,
-              buttonColor: whiteColor,
-              buttonTextColor: primaryColor,
-              buttonText: 'Log Out',
-              onTap: () {
-                // Get.to(LoginScreen());
-              },
-            ),
-          ),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: drawerItems.length,
+                        itemBuilder: (context, index) {
+                          final drawerItem = drawerItems[index];
+                          return Obx(
+                            () => Padding(
+                              padding: const EdgeInsets.only(top: 5, bottom: 5),
+                              child: DrawerListTile(
+                                title: drawerItem.title,
+                                svgSrc: drawerItem.svgSrc,
+                                press: () {
+                                  controller.onOptionButtonTap(index);
+                                },
+                                color: controller.selectedOptionIndex.value ==
+                                        index
+                                    ? Colors.white
+                                    : primaryColor,
+                                textColor:
+                                    controller.selectedOptionIndex.value ==
+                                            index
+                                        ? Colors.black
+                                        : Colors.white,
+                                imageColor:
+                                    controller.selectedOptionIndex.value ==
+                                            index
+                                        ? primaryColor
+                                        : Colors.white,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
 
-          SizedBox(
-            height: 20,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: ElevatedButtonWidget(
+                        height: 50,
+                        buttonColor: whiteColor,
+                        buttonTextColor: primaryColor,
+                        buttonText: 'Log Out',
+                        onTap: () {
+                          // Get.to(LoginScreen());
+                        },
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -112,32 +129,36 @@ class DrawerListTile extends StatelessWidget {
     return InkWell(
       onTap: press,
       child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 10),
+        padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
         child: Container(
-          height: 50,
-          width: Get.width,
-          decoration: BoxDecoration(
-              color: color ?? primaryColor,
-              borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(6),
-                topLeft: Radius.circular(6),
-              ) // Change the background color
+            // height: 50,
+            width: Get.width,
+            decoration: BoxDecoration(
+                color: color ?? primaryColor,
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(6),
+                  topLeft: Radius.circular(6),
+                  topRight: Radius.circular(6),
+                ) // Change the background color
 
+                ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.home,
+                    color: Colors.grey,
+                  ),
+                  Text(
+                    title,
+                    style: TextStyle(color: textColor ?? Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
               ),
-          child: ListTile(
-            horizontalTitleGap: 0.0,
-            // leading: SvgPicture.asset(
-            //   svgSrc,
-            //   color: imageColor ?? Colors.white,
-            //   //colorFilter: ColorFilter.mode(imageColor ?? Colors.white, BlendMode.srcIn),
-            //   height: 16,
-            // ),
-            title: Text(
-              title,
-              style: TextStyle(color: textColor ?? Colors.white),
-            ),
-          ),
-        ),
+            )),
       ),
     );
   }
@@ -154,15 +175,23 @@ class DrawerItem {
 }
 
 final List<DrawerItem> drawerItems = [
-  DrawerItem(title: "Dashboard", svgSrc: ""),
-  DrawerItem(title: "Orders", svgSrc: ""),
-  DrawerItem(title: "Menu", svgSrc: ""),
+  DrawerItem(title: "Home", svgSrc: ""),
+  DrawerItem(title: "VIP", svgSrc: ""),
+  DrawerItem(title: "SHARE", svgSrc: ""),
   DrawerItem(
-    title: "Waiters",
+    title: "Cash Back",
     svgSrc: "",
   ),
   DrawerItem(
-    title: "Chef",
+    title: "Bonus Code",
+    svgSrc: "",
+  ),
+  DrawerItem(
+    title: "Privacy Policy",
+    svgSrc: "",
+  ),
+  DrawerItem(
+    title: "ESPORT",
     svgSrc: "",
   ),
 ];
