@@ -50,9 +50,21 @@ class DashboardScreen extends StatelessWidget {
                         return PageView(
                           physics: const NeverScrollableScrollPhysics(),
                           controller: dashboardController.pageController,
-                          children: const [
-                            SizedBox(
-                              child: Text('1'),
+                          children: [
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        color: primaryColor),
+                                    child: SizedBox(
+                                      child: Text('1'),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                             SizedBox(
                               child: Text('2'),

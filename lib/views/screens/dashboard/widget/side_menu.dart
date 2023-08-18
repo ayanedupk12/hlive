@@ -20,10 +20,14 @@ class SideMenu extends StatelessWidget {
           ),
           Container(
             width: 80,
-            child: Center(
+            child: const Center(
               child: Text(
                 "LOGO",
-                style: TextStyle(color: Colors.blueAccent, fontSize: 30),
+                style: TextStyle(
+                  color: Colors.blueAccent,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -33,7 +37,7 @@ class SideMenu extends StatelessWidget {
           SizedBox(
             height: context.height * 0.85,
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(30.0),
               child: Container(
                 decoration: BoxDecoration(
                     color: primaryColor,
@@ -61,8 +65,8 @@ class SideMenu extends StatelessWidget {
                                 },
                                 color: controller.selectedOptionIndex.value ==
                                         index
-                                    ? Colors.white
-                                    : primaryColor,
+                                    ? Colors.red
+                                    : Colors.grey,
                                 textColor:
                                     controller.selectedOptionIndex.value ==
                                             index
@@ -80,20 +84,20 @@ class SideMenu extends StatelessWidget {
                       ),
                     ),
 
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: ElevatedButtonWidget(
-                        height: 50,
-                        buttonColor: whiteColor,
-                        buttonTextColor: primaryColor,
-                        buttonText: 'Log Out',
-                        onTap: () {
-                          // Get.to(LoginScreen());
-                        },
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.symmetric(horizontal: 20),
+                    //   child: ElevatedButtonWidget(
+                    //     height: 50,
+                    //     buttonColor: whiteColor,
+                    //     buttonTextColor: primaryColor,
+                    //     buttonText: 'Log Out',
+                    //     onTap: () {
+                    //       // Get.to(LoginScreen());
+                    //     },
+                    //   ),
+                    // ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],
@@ -133,15 +137,6 @@ class DrawerListTile extends StatelessWidget {
         child: Container(
             // height: 50,
             width: Get.width,
-            decoration: BoxDecoration(
-                color: color ?? primaryColor,
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(6),
-                  topLeft: Radius.circular(6),
-                  topRight: Radius.circular(6),
-                ) // Change the background color
-
-                ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -149,11 +144,11 @@ class DrawerListTile extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.home,
-                    color: Colors.grey,
+                    color: color ?? Colors.grey,
                   ),
                   Text(
                     title,
-                    style: TextStyle(color: textColor ?? Colors.white),
+                    style: TextStyle(color: color ?? textColor ?? Colors.white),
                     textAlign: TextAlign.center,
                   ),
                 ],
