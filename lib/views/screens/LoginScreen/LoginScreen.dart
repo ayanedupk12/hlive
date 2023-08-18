@@ -1,12 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hllive/views/screens/SignUpScreen/widgets/CustomButton.dart';
 import 'package:hllive/views/screens/SignUpScreen/widgets/CustomTextField.dart';
-
-
-
+import 'package:hllive/views/screens/dashboard/dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -34,25 +30,36 @@ class LoginScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                  SizedBox(height: 20,),
-                  Text.rich(
-                    TextSpan(
-                      children: [
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text.rich(
                         TextSpan(
-                          text: 'HL LIVE ',
-                          style: TextStyle(color: Color(0xffDD234B),fontSize: 18,fontWeight: FontWeight.bold),
+                          children: [
+                            TextSpan(
+                              text: 'HL LIVE ',
+                              style: TextStyle(
+                                  color: Color(0xffDD234B),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            TextSpan(
+                              text:
+                                  'is the leading diversified  online casino and one of the  largest gambling companies in the world.',
+                              style: TextStyle(color: Color(0xffFFFFFF)),
+                            ),
+                          ],
                         ),
-                        TextSpan(
-                          text: 'is the leading diversified  online casino and one of the  largest gambling companies in the world.',
-                          style: TextStyle(color: Color(0xffFFFFFF)),
-                        ),
-                      ],
-                    ),
-                  ),
-               Text(
-                     '1. Deposit bonus for new users: +100% bonus up to 800BRL.\n2. Unlimited Invitation Bonus: For each invited depositor user, you will receive up to R\$12. Themore friends you invite, the more bonuses you will receive.\n3. Join our Telegram channel and be the first to stay abreast ofthe latest  activities and benefits.',style: TextStyle(color: Colors.white),),
-                  Text('https://t.me/Hllive',style: TextStyle(color: Color(0xff066FEC)),),
-                  // Text('May all players have fun at HL LIVE!'),
+                      ),
+                      Text(
+                        '1. Deposit bonus for new users: +100% bonus up to 800BRL.\n2. Unlimited Invitation Bonus: For each invited depositor user, you will receive up to R\$12. Themore friends you invite, the more bonuses you will receive.\n3. Join our Telegram channel and be the first to stay abreast ofthe latest  activities and benefits.',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'https://t.me/Hllive',
+                        style: TextStyle(color: Color(0xff066FEC)),
+                      ),
+                      // Text('May all players have fun at HL LIVE!'),
                       Text(
                         'May all players have fun at HL LIVE!',
                         style: TextStyle(
@@ -110,26 +117,38 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20.0),
                   CustomTextField(
-                    width: context.width/4,
-                    height: Get.height*0.05,
-                    prefixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.email_outlined,size: 20,color: Colors.white.withOpacity(0.5))),
-                    suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.incomplete_circle,size: 20,color: Colors.white.withOpacity(0.5))),
+                    width: context.width / 4,
+                    height: Get.height * 0.05,
+                    prefixIcon: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.email_outlined,
+                            size: 20, color: Colors.white.withOpacity(0.5))),
+                    suffixIcon: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.incomplete_circle,
+                            size: 20, color: Colors.white.withOpacity(0.5))),
                     labelText: 'Email',
                     controller: TextEditingController(),
                   ),
                   SizedBox(height: 10.0),
                   CustomTextField(
-                    width: context.width/4,
-                    height: Get.height*0.05,
-                    prefixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.lock,size: 20,color: Colors.white.withOpacity(0.5))),
-                    suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility_off,size: 20,color: Colors.white.withOpacity(0.5))),
+                    width: context.width / 4,
+                    height: Get.height * 0.05,
+                    prefixIcon: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.lock,
+                            size: 20, color: Colors.white.withOpacity(0.5))),
+                    suffixIcon: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.visibility_off,
+                            size: 20, color: Colors.white.withOpacity(0.5))),
                     labelText: 'Password',
                     obscureText: false,
                     controller: TextEditingController(),
                   ),
                   SizedBox(height: 5.0),
                   SizedBox(
-                    width: context.width/4,
+                    width: context.width / 4,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -154,8 +173,7 @@ class LoginScreen extends StatelessWidget {
                   // ),
                   SizedBox(height: 10.0),
                   SizedBox(
-                    width: context.width/4,
-
+                    width: context.width / 4,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -171,7 +189,8 @@ class LoginScreen extends StatelessWidget {
                               TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: 'To visit this site, please ensure that you\n are over 18 and agree to the\n',
+                                    text:
+                                        'To visit this site, please ensure that you\n are over 18 and agree to the\n',
                                     style: TextStyle(color: Color(0xff3F5773)),
                                   ),
                                   TextSpan(
@@ -192,7 +211,10 @@ class LoginScreen extends StatelessWidget {
                               value: false,
                               onChanged: (value) {},
                             ),
-                            Text('Receive promotions by email',style: TextStyle(color: Color(0xff3F5773)),),
+                            Text(
+                              'Receive promotions by email',
+                              style: TextStyle(color: Color(0xff3F5773)),
+                            ),
                           ],
                         ),
                       ],
@@ -200,11 +222,12 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20.0),
                   SizedBox(
-                    width: context.width/4,
+                    width: context.width / 4,
                     child: CustomButton(
                       fontSize: 20,
                       text: 'Login',
                       onPressed: () {
+                        Get.to(() => DashboardScreen());
                         // Handle sign-up logic
                       },
                     ),
@@ -213,7 +236,11 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Don’t have an account? ',style: TextStyle(color: Color(0xff3F5773),fontSize: 16,)),
+                      Text('Don’t have an account? ',
+                          style: TextStyle(
+                            color: Color(0xff3F5773),
+                            fontSize: 16,
+                          )),
                       SizedBox(width: 5.0),
                       Text(
                         'Sign Up',
@@ -228,7 +255,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20.0),
                   SizedBox(
-                    width: context.width/4,
+                    width: context.width / 4,
                     child: CustomButton(
                       prefix: Icon(Icons.g_mobiledata),
                       fontSize: 17,
@@ -241,9 +268,12 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10.0),
                   SizedBox(
-                    width: context.width/4,
+                    width: context.width / 4,
                     child: CustomButton(
-                      prefix: Icon(Icons.facebook,color: Colors.blue,),
+                      prefix: Icon(
+                        Icons.facebook,
+                        color: Colors.blue,
+                      ),
                       fontSize: 17,
                       isFilled: false,
                       text: 'Sign In with Facebook',

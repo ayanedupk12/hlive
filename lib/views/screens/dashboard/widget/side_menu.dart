@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/constant/colors.dart';
-import '../../../widgets/button_widget.dart';
 import '../dashboard_controller.dart';
 
 class SideMenu extends StatelessWidget {
@@ -15,24 +14,28 @@ class SideMenu extends StatelessWidget {
       backgroundColor: Colors.transparent,
       child: Column(
         children: [
-          SizedBox(
-            height: 20,
-          ),
           Container(
             width: 80,
+            height: context.height * 0.12,
             child: const Center(
-              child: Text(
-                "LOGO",
-                style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "LOGO",
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Here",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                ],
               ),
             ),
-          ),
-          SizedBox(
-            height: 5,
           ),
           SizedBox(
             height: context.height * 0.85,
@@ -45,7 +48,7 @@ class SideMenu extends StatelessWidget {
                 child: Column(
                   children: [
                     // Add the user accounts drawer header here
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hllive/core/constant/colors.dart';
 
 import '../../responsive.dart';
+import '../home/home.dart';
 import 'dashboard_controller.dart';
 import 'widget/side_menu.dart';
 import 'package:get/get.dart';
@@ -51,21 +52,7 @@ class DashboardScreen extends StatelessWidget {
                           physics: const NeverScrollableScrollPhysics(),
                           controller: dashboardController.pageController,
                           children: [
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(15),
-                                        color: primaryColor),
-                                    child: SizedBox(
-                                      child: Text('1'),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                            HomeScreen(),
                             SizedBox(
                               child: Text('2'),
                             ),
