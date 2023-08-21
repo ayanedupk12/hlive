@@ -5,7 +5,6 @@ import 'package:hllive/core/constant/styles.dart';
 import 'package:hllive/views/widgets/button_widget.dart';
 
 import '../../../core/constant/colors.dart';
-import '../LoginScreen/widgets/CustomButton.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -25,9 +24,28 @@ class HomeScreen extends StatelessWidget {
             width: context.width * 0.8,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15), color: primaryColor),
-            child: Row(
+
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Row(
+                  children: [
+                    Text(
+                      'Sign Up and get',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      '10% discount',
+                      style: TextStyle(
+                          color: buttonColor, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 20,
+                ),
                 ElevatedButtonWidget(
                   width: 120,
                   buttonText: '  Sign In  ',
