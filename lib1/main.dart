@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'core/constant/colors.dart';
-import 'views/screens/LoginScreen/LoginScreen.dart';
 import 'views/screens/dashboard/dashboard_screen.dart';
 
 void main() {

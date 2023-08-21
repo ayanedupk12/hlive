@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
   final Widget prefix;
   final double borderRadius;// New property for controlling border radius
 
-  CustomButton({
+  const CustomButton({super.key, 
     required this.text,
     required this.onPressed,
     this.isFilled = true,
@@ -38,17 +38,16 @@ class CustomButton extends StatelessWidget {
           height: height,
           child: ElevatedButton(
       onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+          shape: shape, backgroundColor: backgroundColor
+
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          prefix,SizedBox(width: 10,),
+          prefix,const SizedBox(width: 10,),
           Text(text,style: TextStyle(color: color,fontSize: fontSize,fontWeight: FontWeight.bold),),
         ],
-      ),
-      style: ElevatedButton.styleFrom(
-          shape: shape,
-            primary: backgroundColor
-
       ),
     ),
         )
@@ -57,16 +56,15 @@ class CustomButton extends StatelessWidget {
       height: height,
           child: OutlinedButton(
       onPressed: onPressed,
+      style: OutlinedButton.styleFrom(
+          foregroundColor: color, shape: shape
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          prefix,SizedBox(width: 10,),
+          prefix,const SizedBox(width: 10,),
           Text(text,style: TextStyle(color: color,fontSize: fontSize),),
         ],
-      ),
-      style: OutlinedButton.styleFrom(
-          shape: shape,
-          primary: color
       ),
     ),
         );

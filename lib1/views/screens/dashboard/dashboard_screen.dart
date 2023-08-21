@@ -51,7 +51,7 @@ class DashboardScreen extends StatelessWidget {
                         return PageView(
                           physics: const NeverScrollableScrollPhysics(),
                           controller: dashboardController.pageController,
-                          children: [
+                          children: const [
                             HomeScreen(),
                             SizedBox(
                               child: Text('2'),

@@ -5,6 +5,8 @@ import 'package:hllive/views/screens/SignUpScreen/widgets/CustomTextField.dart';
 import 'package:hllive/views/screens/dashboard/dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,10 +16,10 @@ class LoginScreen extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
-              color: Color(0xff161F2C),
-              child: Center(
+              color: const Color(0xff161F2C),
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  padding: EdgeInsets.symmetric(horizontal: 40.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -78,8 +80,8 @@ class LoginScreen extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              color: Color(0xff10151E),
-              padding: EdgeInsets.all(20.0),
+              color: const Color(0xff10151E),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +109,7 @@ class LoginScreen extends StatelessWidget {
                   //   ],
                   // ),
                   // SizedBox(height: 20.0),
-                  Text(
+                  const Text(
                     'Sign in',
                     style: TextStyle(
                       fontSize: 40.0,
@@ -115,7 +117,7 @@ class LoginScreen extends StatelessWidget {
                       fontWeight: FontWeight.w900,
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   CustomTextField(
                     width: context.width / 4,
                     height: Get.height * 0.05,
@@ -130,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                     labelText: 'Email',
                     controller: TextEditingController(),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   CustomTextField(
                     width: context.width / 4,
                     height: Get.height * 0.05,
@@ -146,7 +148,7 @@ class LoginScreen extends StatelessWidget {
                     obscureText: false,
                     controller: TextEditingController(),
                   ),
-                  SizedBox(height: 5.0),
+                  const SizedBox(height: 5.0),
                   SizedBox(
                     width: context.width / 4,
                     child: Row(
@@ -171,7 +173,7 @@ class LoginScreen extends StatelessWidget {
                   //   labelText: 'Invitation Code',
                   //   controller: TextEditingController(),
                   // ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   SizedBox(
                     width: context.width / 4,
                     child: Column(
@@ -181,11 +183,11 @@ class LoginScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Checkbox(
-                              side: BorderSide(color: Color(0xFF9F9F9F)),
+                              side: const BorderSide(color: Color(0xFF9F9F9F)),
                               value: false,
                               onChanged: (value) {},
                             ),
-                            Text.rich(
+                            const Text.rich(
                               TextSpan(
                                 children: [
                                   TextSpan(
@@ -203,15 +205,15 @@ class LoginScreen extends StatelessWidget {
                             // Text('',style: TextStyle(color: Color(0xff3F5773)),),
                           ],
                         ),
-                        SizedBox(height: 10.0),
+                        const SizedBox(height: 10.0),
                         Row(
                           children: [
                             Checkbox(
-                              side: BorderSide(color: Color(0xFF9F9F9F)),
+                              side: const BorderSide(color: Color(0xFF9F9F9F)),
                               value: false,
                               onChanged: (value) {},
                             ),
-                            Text(
+                            const Text(
                               'Receive promotions by email',
                               style: TextStyle(color: Color(0xff3F5773)),
                             ),
@@ -220,20 +222,20 @@ class LoginScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   SizedBox(
                     width: context.width / 4,
                     child: CustomButton(
                       fontSize: 20,
                       text: 'Login',
                       onPressed: () {
-                        Get.to(() => DashboardScreen());
+                        Get.to(() => const DashboardScreen());
                         // Handle sign-up logic
                       },
                     ),
                   ),
-                  SizedBox(height: 10.0),
-                  Row(
+                  const SizedBox(height: 10.0),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Don’t have an account? ',
@@ -253,11 +255,11 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   SizedBox(
                     width: context.width / 4,
                     child: CustomButton(
-                      prefix: Icon(Icons.g_mobiledata),
+                      prefix: const Icon(Icons.g_mobiledata),
                       fontSize: 17,
                       isFilled: false,
                       text: 'Sign In with Google',
@@ -266,11 +268,11 @@ class LoginScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   SizedBox(
                     width: context.width / 4,
                     child: CustomButton(
-                      prefix: Icon(
+                      prefix: const Icon(
                         Icons.facebook,
                         color: Colors.blue,
                       ),

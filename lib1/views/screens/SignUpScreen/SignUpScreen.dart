@@ -9,6 +9,8 @@ import 'package:hllive/views/screens/SignUpScreen/widgets/CustomTextField.dart';
 
 
 class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,10 +20,10 @@ class SignUpScreen extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
-              color: Color(0xff161F2C),
-              child: Center(
+              color: const Color(0xff161F2C),
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                  padding: EdgeInsets.symmetric(horizontal: 40.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -71,13 +73,13 @@ class SignUpScreen extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Container(
-              color: Color(0xff10151E),
-              padding: EdgeInsets.all(20.0),
+              color: const Color(0xff10151E),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 40.0),
-                  Row(
+                  const SizedBox(height: 40.0),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
@@ -98,8 +100,8 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0),
-                  Text(
+                  const SizedBox(height: 20.0),
+                  const Text(
                     'Sign Up',
                     style: TextStyle(
                       fontSize: 40.0,
@@ -107,7 +109,7 @@ class SignUpScreen extends StatelessWidget {
                       fontWeight: FontWeight.w900,
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   CustomTextField(
                     width: context.width/4,
                     height: Get.height*0.05,
@@ -116,7 +118,7 @@ class SignUpScreen extends StatelessWidget {
                     labelText: 'Email',
                     controller: TextEditingController(),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   CustomTextField(
                     width: context.width/4,
                     height: Get.height*0.05,
@@ -126,10 +128,10 @@ class SignUpScreen extends StatelessWidget {
                     obscureText: false,
                     controller: TextEditingController(),
                   ),
-                  SizedBox(height: 30.0),
+                  const SizedBox(height: 30.0),
                   SizedBox(
                     width: context.width/4,
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
@@ -143,7 +145,7 @@ class SignUpScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   CustomTextField(
                     width: context.width/4,
                     height: Get.height*0.05,
@@ -151,7 +153,7 @@ class SignUpScreen extends StatelessWidget {
                     labelText: 'Invitation Code',
                     controller: TextEditingController(),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   SizedBox(
                     width: context.width/4,
 
@@ -162,11 +164,11 @@ class SignUpScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Checkbox(
-                              side: BorderSide(color: Color(0xFF9F9F9F)),
+                              side: const BorderSide(color: Color(0xFF9F9F9F)),
                               value: false,
                               onChanged: (value) {},
                             ),
-                            Text.rich(
+                            const Text.rich(
                               TextSpan(
                                 children: [
                                   TextSpan(
@@ -183,21 +185,21 @@ class SignUpScreen extends StatelessWidget {
                             // Text('',style: TextStyle(color: Color(0xff3F5773)),),
                           ],
                         ),
-                        SizedBox(height: 10.0),
+                        const SizedBox(height: 10.0),
                         Row(
                           children: [
                             Checkbox(
-                              side: BorderSide(color: Color(0xFF9F9F9F)),
+                              side: const BorderSide(color: Color(0xFF9F9F9F)),
                               value: false,
                               onChanged: (value) {},
                             ),
-                            Text('Receive promotions by email',style: TextStyle(color: Color(0xff3F5773)),),
+                            const Text('Receive promotions by email',style: TextStyle(color: Color(0xff3F5773)),),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   SizedBox(
                     width: context.width/4,
                     child: CustomButton(
@@ -208,8 +210,8 @@ class SignUpScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height: 10.0),
-                  Row(
+                  const SizedBox(height: 10.0),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Already have an account?',style: TextStyle(color: Color(0xff3F5773),fontSize: 16,)),
@@ -225,11 +227,11 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   SizedBox(
                     width: context.width/4,
                     child: CustomButton(
-                      prefix: Icon(Icons.g_mobiledata),
+                      prefix: const Icon(Icons.g_mobiledata),
                       fontSize: 17,
                       isFilled: false,
                       text: 'Sign Up with Google',
@@ -238,11 +240,11 @@ class SignUpScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   SizedBox(
                     width: context.width/4,
                     child: CustomButton(
-                      prefix: Icon(Icons.facebook,color: Colors.blue,),
+                      prefix: const Icon(Icons.facebook,color: Colors.blue,),
                       fontSize: 17,
                       isFilled: false,
                       text: 'Sign Up with Facebook',

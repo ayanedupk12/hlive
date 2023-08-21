@@ -14,7 +14,7 @@ class SideMenu extends StatelessWidget {
       backgroundColor: Colors.transparent,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             width: 80,
             height: context.height * 0.12,
             child: const Center(
@@ -137,7 +137,7 @@ class DrawerListTile extends StatelessWidget {
       onTap: press,
       child: Padding(
         padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
-        child: Container(
+        child: SizedBox(
             // height: 50,
             width: Get.width,
             child: Padding(
