@@ -9,6 +9,18 @@ class AppAssets{
     static const String imgGift2 = 'assets/images/gift2.png';
     static const String imgUpgradeGift = 'assets/images/upgrade_gift.png';
 
+    // side menu icon
+    static const String icHome = 'assets/images/icHome.png';
+    static const String icVip = 'assets/images/icVip.png';
+    static const String icShare = 'assets/images/icShare.png';
+    static const String icCashBack = 'assets/images/icCashBack.png';
+    static const String icBonus = 'assets/images/icBonus.png';
+    static const String icPrivacyPolicy = 'assets/images/icPrivacyPolicy.png';
+    static const String icESport = 'assets/images/icEsport.png';
+
+
+
+
 
 
 

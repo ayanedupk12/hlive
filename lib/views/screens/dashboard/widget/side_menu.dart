@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hllive/core/constant/assests_constant.dart';
 
 import '../../../../core/constant/colors.dart';
 import '../dashboard_controller.dart';
@@ -145,8 +146,10 @@ class DrawerListTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.home,
+                  Image.asset(
+                    svgSrc,
+                    height: 30,
+                    width: 30,
                     color: color ?? Colors.grey,
                   ),
                   Text(
@@ -173,23 +176,23 @@ class DrawerItem {
 }
 
 final List<DrawerItem> drawerItems = [
-  DrawerItem(title: "Home", svgSrc: ""),
-  DrawerItem(title: "VIP", svgSrc: ""),
-  DrawerItem(title: "SHARE", svgSrc: ""),
+  DrawerItem(title: "Home", svgSrc: AppAssets.icHome),
+  DrawerItem(title: "VIP", svgSrc:  AppAssets.icVip),
+  DrawerItem(title: "SHARE", svgSrc: AppAssets.icShare),
   DrawerItem(
     title: "Cash Back",
-    svgSrc: "",
+    svgSrc: AppAssets.icCashBack,
   ),
   DrawerItem(
     title: "Bonus Code",
-    svgSrc: "",
+    svgSrc: AppAssets.icBonus,
   ),
   DrawerItem(
     title: "Privacy Policy",
-    svgSrc: "",
+    svgSrc: AppAssets.icPrivacyPolicy,
   ),
   DrawerItem(
     title: "ESPORT",
-    svgSrc: "",
+    svgSrc: AppAssets.icESport,
   ),
 ];
