@@ -5,6 +5,7 @@ import 'package:hllive/core/constant/assests_constant.dart';
 import '../../../core/constant/colors.dart';
 import '../../../core/constant/styles.dart';
 import '../../widgets/button_widget.dart';
+import '../dashboard/widget/ProfileDialogue.dart';
 
 class VipScreen extends StatelessWidget {
   const VipScreen({Key? key}) : super(key: key);
@@ -1176,7 +1177,13 @@ class VipHeader extends StatelessWidget {
           SizedBox(
             width: 20,
           ),
-          const Profile()
+
+          InkWell(
+              onTap: (){
+                Get.dialog(ProfileDialogue());
+              },
+              child: const Profile())
+
         ],
       ),
     );
