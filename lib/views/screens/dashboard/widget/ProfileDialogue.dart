@@ -5,8 +5,7 @@ import 'package:get/get.dart';
 
 class ProfileDialogue extends StatelessWidget {
 
-  String type;
-   ProfileDialogue({Key? key,required this.type}) : super(key: key,);
+   ProfileDialogue({Key? key}) : super(key: key,);
 
   @override
   Widget build(BuildContext context) {
