@@ -12,11 +12,6 @@ class AppAssets{
     static const String imgJoin = 'assets/images/imgJoin.png';
     static const String imgGame1 = 'assets/images/game1.png';
     static const String imgGame2 = 'assets/images/game2.png';
-
-
-
-
-
 }
 
  String imgWallet = 'https://as1.ftcdn.net/v2/jpg/04/34/06/18/1000_F_434061877_g5wNu1mH7wxg32aYRWxjLNJQfPeTopsL.jpg';
