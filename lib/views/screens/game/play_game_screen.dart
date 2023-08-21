@@ -72,7 +72,7 @@ class PlayGameScreen extends StatelessWidget {
                           PlayGameWidget(
                             height: Get.height * 0.2,
                             width: Get.width  * 0.15,
-                            image: AppAssets.imgGame2,
+                            image: 'assets/images/imgGameCrash.png',
 
                           ),
 

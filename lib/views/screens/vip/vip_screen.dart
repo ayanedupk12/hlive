@@ -647,7 +647,7 @@ class VipScreen extends StatelessWidget {
                                   padding:  EdgeInsets.symmetric(horizontal: 16),
                                   child: Row(
                                     children: [
-                                      Image.asset(AppAssets.imgJoin , height: 40,width: 40,),
+                                      Image.asset(AppAssets.icBonus , height: 40,width: 40,),
                                        SizedBox(width: 20,),
                                       Text('Join Now', style: TextStyles.bodyText?.copyWith(color: whiteColor),),
 
@@ -739,7 +739,7 @@ class CashBackContainer extends StatelessWidget {
               height: Get.height * 0.2,
               width: Get.width * 0.16,
                child: Image.asset(
-                AppAssets.imgCashBack1,
+                AppAssets.icCashBack,
                 fit: BoxFit.contain,
               ),
             )
@@ -868,7 +868,7 @@ class DepositBetWidget extends StatelessWidget {
                     children: [
                       SizedBox(height: 10,),
                       Image.asset(
-                        AppAssets.imgCrown,
+                        AppAssets.icBonus,
                         height: Get.height * 0.1,
                         width: Get.width * 0.08,
                         fit: BoxFit.contain,

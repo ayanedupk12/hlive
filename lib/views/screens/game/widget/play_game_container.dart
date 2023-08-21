@@ -39,7 +39,7 @@ class PlayGameWidget extends StatelessWidget {
             width: Get.width,
             color: secondaryColor,
             child: Image.asset(
-              image ?? AppAssets.imgGame1,
+              image ?? AppAssets.imgGift2,
               fit: BoxFit.fill,
             ),
           ),
