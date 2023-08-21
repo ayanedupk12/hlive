@@ -33,6 +33,9 @@ class TextStyles {
   static TextStyle? get ultraSmallBlackText => smallBlackText?.copyWith(
         fontSize: 9,
       );
+ static TextStyle? get smallWhiteText =>
+      bottomBlackText?.copyWith(fontSize: 12, fontWeight: FontWeight.w500,color: Colors.white);
+
 
   static TextStyle? get bottomPrimaryColorText => bottomBlackText?.copyWith(
       color: primaryColor, fontWeight: FontWeight.w500);
