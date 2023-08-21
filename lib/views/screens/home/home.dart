@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hllive/core/constant/assests_constant.dart';
+import 'package:hllive/core/constant/styles.dart';
 import 'package:hllive/views/widgets/button_widget.dart';
 
 import '../../../core/constant/colors.dart';
@@ -68,8 +70,159 @@ class HomeScreen extends StatelessWidget {
             width: context.width * 0.8,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15), color: primaryColor),
-            child: const SizedBox(
-              child: Text('1'),
+            child: SizedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: context.height * 0.27,
+                      width: context.width,
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: context.height * 0.2,
+                            width: context.width,
+                            decoration: BoxDecoration(
+                                color: Colors.black26,
+                                borderRadius: BorderRadius.circular(20),
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                      AppAssets.imgRonaldo,
+                                    ),
+                                    fit: BoxFit.fill)),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: SizedBox(
+                              height: context.height * 0.16,
+                              width: context.width * 0.75,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                      child: Image.asset(
+                                    AppAssets.imgPromo,
+                                    fit: BoxFit.fill,
+                                  )),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                      child: Image.asset(
+                                    AppAssets.imgPromo,
+                                    fit: BoxFit.fill,
+                                  )),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Expanded(
+                                      child: Image.asset(
+                                    AppAssets.imgPromo,
+                                    fit: BoxFit.fill,
+                                  )),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "24 Top Bonus",
+                      style: TextStyles.h1?.copyWith(color: Colors.grey),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                        height: context.height * 0.18,
+                        width: context.width * 0.75,
+                        child: ListView.builder(
+                            itemCount: 7,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 18.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      height: context.height * 0.18,
+                                      width: context.width * 0.087,
+                                      decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          borderRadius:
+                                              BorderRadius.circular(14)),
+                                    ),
+                                    index == 6
+                                        ? Padding(
+                                          padding: const EdgeInsets.only(left: 18.0),
+                                          child: Container(
+                                              height: context.height * 0.18,
+                                              width: context.width * 0.06,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.grey,
+                                                  borderRadius:
+                                                      BorderRadius.circular(14)),
+                                              child: const Center(
+                                                  child: Text('See All')),
+                                            ),
+                                        )
+                                        : const SizedBox(),
+                                  ],
+                                ),
+                              );
+                            })),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                        height: context.height * 0.18,
+                        width: context.width * 0.75,
+                        child: ListView.builder(
+                            itemCount: 7,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 18.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      height: context.height * 0.18,
+                                      width: context.width * 0.087,
+                                      decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          borderRadius:
+                                          BorderRadius.circular(14)),
+                                    ),
+                                    index == 6
+                                        ? Padding(
+                                      padding: const EdgeInsets.only(left: 18.0),
+                                      child: Container(
+                                        height: context.height * 0.18,
+                                        width: context.width * 0.06,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius:
+                                            BorderRadius.circular(14)),
+                                        child: const Center(
+                                            child: Text('See All')),
+                                      ),
+                                    )
+                                        : const SizedBox(),
+                                  ],
+                                ),
+                              );
+                            })),
+
+                  ],
+                ),
+              ),
             ),
           ),
         ],

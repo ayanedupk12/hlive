@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hllive/core/constant/colors.dart';
-import 'package:hllive/views/screens/dashboard/widget/MissionsScreen.dart';
 import 'package:hllive/views/screens/game/game_screen.dart';
 
 import '../../responsive.dart';
-import '../../widgets/RoundButton.dart';
 import '../game/play_game_screen.dart';
 import '../home/home.dart';
 import '../vip/vip_screen.dart';
@@ -24,7 +22,7 @@ class DashboardScreen extends StatelessWidget {
             backgroundColor: primaryColor.withOpacity(0.8),
             key: dashboardController.scaffoldKey,
             drawer: Padding(
-              padding: const EdgeInsets.all(28.0),
+              padding: const EdgeInsets.all(18.0),
               child: SideMenu(),
             ),
             body: SafeArea(
@@ -61,7 +59,9 @@ class DashboardScreen extends StatelessWidget {
                             VipScreen(),
                             GameScreen(),
                             PlayGameScreen(),
-                            SizedBox(child: Text('5'),),
+                            SizedBox(
+                              child: Text('5'),
+                            ),
                           ],
                           onPageChanged: (index) {
                             dashboardController.selectedOptionIndex.value =
@@ -71,19 +71,7 @@ class DashboardScreen extends StatelessWidget {
                       },
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 60),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        RoundIconButton(child: Icon(Icons.wallet_giftcard,color: whiteColor,), onPressed: () {
-                          Get.dialog(MissionsScreen());
-                        }, backgroundColor: orangeColor,),
-                        SizedBox(height: 10,),
-                        RoundIconButton(child: Icon(Icons.message,color: whiteColor,), onPressed: () {  }, backgroundColor: blueColor,),
-                    ],),
-                  ),
+
                 ],
               ),
             ),
