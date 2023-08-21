@@ -22,7 +22,7 @@ class DashboardScreen extends StatelessWidget {
             backgroundColor: primaryColor.withOpacity(0.8),
             key: dashboardController.scaffoldKey,
             drawer: Padding(
-              padding: const EdgeInsets.all(28.0),
+              padding: const EdgeInsets.all(18.0),
               child: SideMenu(),
             ),
             body: SafeArea(
@@ -71,6 +71,7 @@ class DashboardScreen extends StatelessWidget {
                       },
                     ),
                   ),
+
                 ],
               ),
             ),
