@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   final double width;
   final double height;
 
-  const CustomTextField({super.key, 
+  CustomTextField({
     required this.labelText,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
@@ -23,7 +23,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: width,
       height: height,
       child: TextField(
@@ -34,15 +34,14 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           hoverColor: Colors.white.withOpacity(0.5),
           focusedBorder:OutlineInputBorder(
-
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
               borderSide: BorderSide(color: Colors.white.withOpacity(0.5))
           ),
-          contentPadding: const EdgeInsets.symmetric(vertical: 10.0), // Adjust vertical padding
+          contentPadding: EdgeInsets.symmetric(vertical: 10.0), // Adjust vertical padding
           labelText: labelText,
           labelStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
           border: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(color: Colors.white.withOpacity(0.5))
           ),
           prefixIcon: prefixIcon,

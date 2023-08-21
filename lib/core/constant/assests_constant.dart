@@ -2,12 +2,16 @@ class AppAssets{
 // VIP IMAGES
     static const String imgDeposit = 'assets/images/deposit.png';
     static const String imgProfile = 'assets/images/profile.png';
-   // static const String imgCrown = 'assets/images/crown.png';
+    static const String imgCrown = 'assets/images/crown.png';
     static const String imgPlayButton = 'assets/images/playButton.png';
     static const String imgDollar = 'assets/images/dollar.png';
     static const String imgGift1 = 'assets/images/gift1.png';
     static const String imgGift2 = 'assets/images/gift2.png';
     static const String imgUpgradeGift = 'assets/images/upgrade_gift.png';
+    static const String imgCashBack1 = 'assets/images/cashBack1.png';
+    static const String imgJoin = 'assets/images/imgJoin.png';
+    static const String imgGame1 = 'assets/images/game1.png';
+    static const String imgGame2 = 'assets/images/game2.png';
 
 
 

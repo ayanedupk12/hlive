@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:hllive/core/constant/assests_constant.dart';
 import 'package:hllive/views/screens/game/widget/play_game_container.dart';
 
 import '../../../core/constant/colors.dart';
@@ -31,15 +32,11 @@ class PlayGameScreen extends StatelessWidget {
                 child: SizedBox(
                   child: Column(
                     children: [
+
                       Row(
                         children: [
-                          const Icon(
-                            Icons.smart_toy_outlined,
-                            color: whiteColor,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
+                          Icon(Icons.smart_toy_outlined, color: whiteColor,),
+                          SizedBox(width: 10,),
                           const Text(
                             'INTERNATIONAL',
                             style: TextStyle(
@@ -47,20 +44,21 @@ class PlayGameScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14),
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
+                          SizedBox(width: 10,),
                           Container(
                             height: Get.height * 0.04,
                             width: Get.width * 0.08,
                             decoration: BoxDecoration(
                                 color: secondaryColor,
-                                borderRadius: BorderRadius.circular(4)),
-                            child: const Center(
+                                borderRadius: BorderRadius.circular(4)
+                            ),
+                            child:Center(
                               child: Text(
                                 'Total 12',
-                                style:
-                                    TextStyle(color: whiteColor, fontSize: 10),
+                                style: TextStyle(
+                                    color: whiteColor,
+
+                                    fontSize: 10),
                               ),
                             ),
                           )
@@ -70,79 +68,91 @@ class PlayGameScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                          PlayGameWidget(
-                            height: Get.height * 0.2,
-                            width: Get.width * 0.15,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
 
-                      const SizedBox(
-                        height: 10,
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                            image: AppAssets.imgGame2,
+
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+
+                        ],
                       ),
+                      SizedBox(height: 10,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+
+                        ],
+                      ),
+                      SizedBox(height: 10,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+                          PlayGameWidget(
+                            height: Get.height * 0.2,
+                            width: Get.width  * 0.15,
+                          ),
+
+
+                        ],
+                      ),
+                      SizedBox(height: 10,),
+
+                      SizedBox(height: 10,),
 
                       // SizedBox(
                       //   height: 600,
@@ -164,6 +174,11 @@ class PlayGameScreen extends StatelessWidget {
                       //     },
                       //   ),
                       // )
+
+
+
+
+
                     ],
                   ),
                 ),

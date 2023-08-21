@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hllive/views/screens/game/widget/play_game_container.dart';
+import 'package:hllive/views/widgets/button_widget.dart';
 
 import '../../../core/constant/assests_constant.dart';
 import '../../../core/constant/colors.dart';
@@ -18,7 +19,7 @@ class GameScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const GameHeader(),
+            GameHeader(),
             const SizedBox(
               height: 20,
             ),
@@ -32,26 +33,27 @@ class GameScreen extends StatelessWidget {
                 child: SizedBox(
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: Get.height * 0.04,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10),
+
+                      SizedBox(height: Get.height * 0.04,),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            GameContainerW(),
+                            GameContainerW(
+
+                            ),
                             GameContainerW(
                               title: 'PRINCIPAL',
                             ),
+
+
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: Get.height * 0.04,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10),
+                      SizedBox(height: Get.height * 0.04,),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -61,14 +63,14 @@ class GameScreen extends StatelessWidget {
                             GameContainerW(
                               title: 'PROVIDERS',
                             ),
+
+
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: Get.height * 0.04,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10),
+                      SizedBox(height: Get.height * 0.04,),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -78,12 +80,13 @@ class GameScreen extends StatelessWidget {
                             GameContainerW(
                               title: 'LIVE CASINO',
                             ),
+
+
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: Get.height * 0.04,
-                      ),
+                      SizedBox(height: Get.height * 0.04,),
+
                     ],
                   ),
                 ),
@@ -107,89 +110,87 @@ class GameContainerW extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: Get.height * 0.3,
-        width: Get.width * 0.35,
-        decoration: const BoxDecoration(
-          color: primaryColor,
+      height: Get.height * 0.3,
+      width: Get.width * 0.35,
+
+      decoration: BoxDecoration(
+        color: primaryColor,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Icon(Icons.smart_toy_outlined, color: whiteColor,),
+                SizedBox(width: 10,),
+                 Text(
+                 title ?? 'INTERNATIONAL',
+                  style: TextStyle(
+                      color: whiteColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14),
+                ),
+                SizedBox(width: 10,),
+                Container(
+                  height: Get.height * 0.04,
+                  width: Get.width * 0.08,
+                  decoration: BoxDecoration(
+                    color: secondaryColor,
+                    borderRadius: BorderRadius.circular(4)
+                  ),
+                  child:Center(
+                    child: Text(
+                      'Total 12',
+                      style: TextStyle(
+                          color: whiteColor,
+
+                          fontSize: 10),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 10,),
+            Row(
+              children: [
+                PlayGameWidget(),
+                SizedBox(
+                  width: 5,
+                ),
+                PlayGameWidget(),
+                SizedBox(
+                  width: 5,
+                ),
+                PlayGameWidget(),
+                SizedBox(
+                  width: 5,
+                ),
+             Container(
+        height: Get.height * 0.2,
+        width :Get.width * 0.08,
+        decoration: BoxDecoration(
+            color: secondaryColor,
+            borderRadius: BorderRadius.circular(10)
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const Icon(
-                    Icons.smart_toy_outlined,
-                    color: whiteColor,
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    title ?? 'INTERNATIONAL',
-                    style: const TextStyle(
-                        color: whiteColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: Get.height * 0.04,
-                    width: Get.width * 0.08,
-                    decoration: BoxDecoration(
-                        color: secondaryColor,
-                        borderRadius: BorderRadius.circular(4)),
-                    child: const Center(
-                      child: Text(
-                        'Total 12',
-                        style: TextStyle(color: whiteColor, fontSize: 10),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  const PlayGameWidget(),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const PlayGameWidget(),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const PlayGameWidget(),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Container(
-                    height: Get.height * 0.2,
-                    width: Get.width * 0.08,
-                    decoration: BoxDecoration(
-                        color: secondaryColor,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Center(
-                      child: Text(
-                        'SEE \n ALL',
-                        style: TextStyles.h1?.copyWith(
-                          color: containerColor,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
-        ));
+        child: Center(child: Text(
+          'SEE \n ALL' , style: TextStyles.h1?.copyWith(
+          color: containerColor,
+          fontSize: 16,
+        ),
+        ),),
+      )
+
+              ],
+            )
+          ],
+        ),
+      )
+
+    );
   }
 }
+
 
 class GameHeader extends StatelessWidget {
   const GameHeader({
@@ -206,72 +207,75 @@ class GameHeader extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const Row(
+          Row(
             children: [
-              SizedBox(
-                width: 20,
-              ),
+              SizedBox(width: 20,),
+
               Text(
                 '100% BONUS',
-                style:
-                    TextStyle(color: buttonColor, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: buttonColor, fontWeight: FontWeight.bold),
               ),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             width: 30,
           ),
           Container(
             height: Get.height * 0.06,
             width: Get.width * 0.15,
             decoration: BoxDecoration(
-                color: primaryColor, borderRadius: BorderRadius.circular(10)),
+                color: primaryColor,
+                borderRadius: BorderRadius.circular(10)
+            ),
             child: Padding(
               padding: const EdgeInsets.only(left: 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    "R\$10",
-                    style: TextStyle(
-                        color: whiteColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
+
+                  Text("R\$10" , style: TextStyle(
+                      color: whiteColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16
+                  ),),
                   Container(
                     height: Get.height * 0.06,
                     width: Get.width * 0.08,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: redColor,
                     ),
+
                     child: Row(
                       children: [
                         SizedBox(
                           height: 30,
                           width: 45,
-                          child: Image.network(
-                            imgWallet,
+                          child:  Image.asset(
+                            AppAssets.imgDeposit,
                             fit: BoxFit.contain,
-                          ),
+                          ) ,
                         ),
-                        const Text(
-                          "Deposit",
-                          style: TextStyle(
-                              color: whiteColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14),
-                        ),
+
+                        const Text("Deposit" , style: TextStyle(
+                            color: whiteColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14
+                        ),),
+
                       ],
                     ),
+
                   )
                 ],
               ),
             ),
           ),
-          const SizedBox(
+          SizedBox(
             width: 20,
           ),
           const Profile()
+
         ],
       ),
     );
