@@ -15,7 +15,7 @@ class SideMenu extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 100,
+            width: 80,
             height: context.height * 0.12,
             child: const Center(
               child: Column(
