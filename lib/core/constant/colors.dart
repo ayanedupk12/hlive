@@ -10,3 +10,5 @@ const Color buttonColor = Color(0xffDDB750);
 const Color blackColor = Color(0xff000000);
 const Color containerColor = Color(0xff3F5773);
 const Color redColor = Color(0xffDD234B);
+const Color orangeColor = Color(0xffF4973F);
+const Color blueColor = Colors.blue;

@@ -40,7 +40,7 @@ class VipScreen extends StatelessWidget {
                         IconButton(onPressed: (){}, icon: Icon(Icons.play_arrow_rounded , size: 50,)),
 
                         SizedBox(width: 40,),
-                        DepositBetWidget(),
+                        DepositBetWidget(width: context.width,height: context.height,),
 
                         //Image.asset(AppAssets.imgPlayButton, height: 100, width: 50,),
                         SizedBox(width: 40,),
@@ -846,8 +846,12 @@ class RewardContainer extends StatelessWidget {
 
 
 class DepositBetWidget extends StatelessWidget {
-  const DepositBetWidget({
+  double width;
+  double height;
+   DepositBetWidget({
     super.key,
+     required this.width,
+     required this.height
   });
 
   @override
@@ -855,8 +859,8 @@ class DepositBetWidget extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: context.height * 0.22,
-          width: context.width * 0.6,
+          height: height * 0.22,
+          width: width * 0.6,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10), color: primaryColor),
           child: Padding(
@@ -864,33 +868,33 @@ class DepositBetWidget extends StatelessWidget {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding:  EdgeInsets.only(left: width*0.05,top: height*0.02),
                   child: Column(
                     children: [
                       SizedBox(height: 10,),
                       Image.asset(
-                        AppAssets.icBonus,
-                        height: Get.height * 0.1,
-                        width: Get.width * 0.08,
+                        AppAssets.crownIcon,
+                        height: height * 0.1,
+                        width: width * 0.08,
                         fit: BoxFit.contain,
                       ),
                       Text("VIP 0" , style: TextStyle(fontSize: 16 , color: whiteColor),)
                     ],
                   ),
                 ),
-                SizedBox(width: Get.width * 0.1),
+                SizedBox(width: width * 0.1),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      SizedBox(height: 30,),
+                      SizedBox(height: 20,),
                       Row(children: [
                         Text(
                           'Deposite', style: TextStyle(
                             color: whiteColor
                         ),
                         ),
-                        SizedBox(width: Get.width * 0.12,),
+                        SizedBox(width: width * 0.12,),
                         Text(
                           'R0/R20', style: TextStyle(
                             color: whiteColor
@@ -907,7 +911,7 @@ class DepositBetWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8
                               ), // Use responsive_sizer for borderRadius
                               child: SizedBox(
-                                width: Get.width * 0.2,
+                                width: width * 0.2,
                                 child: const LinearProgressIndicator(
                                   minHeight: 12
                                   , // Use responsive_sizer for minHeight
@@ -930,7 +934,7 @@ class DepositBetWidget extends StatelessWidget {
 
                         ],
                       ),
-                      SizedBox(height: 20,),
+                      SizedBox(height: 10,),
 
                       Row(children: [
                         Text(
@@ -938,7 +942,7 @@ class DepositBetWidget extends StatelessWidget {
                             color: whiteColor
                         ),
                         ),
-                        SizedBox(width: Get.width * 0.12,),
+                        SizedBox(width: width * 0.12,),
                         Text(
                           'R0/R20', style: TextStyle(
                             color: whiteColor
@@ -954,7 +958,7 @@ class DepositBetWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8
                               ), // Use responsive_sizer for borderRadius
                               child: SizedBox(
-                                width: Get.width * 0.2,
+                                width: width * 0.2,
                                 child: LinearProgressIndicator(
                                   minHeight: 12
                                   , // Use responsive_sizer for minHeight

@@ -8,6 +8,7 @@ class AppAssets{
     static const String imgGift1 = 'assets/images/gift1.png';
     static const String imgGift2 = 'assets/images/gift2.png';
     static const String imgUpgradeGift = 'assets/images/upgrade_gift.png';
+    static const String crownIcon = 'assets/images/crown.png';
 
     // side menu icon
     static const String icHome = 'assets/images/icHome.png';
