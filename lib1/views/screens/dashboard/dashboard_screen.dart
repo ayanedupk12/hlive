@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hllive/core/constant/colors.dart';
-import 'package:hllive/views/screens/game/game_screen.dart';
 
 import '../../responsive.dart';
-import '../game/play_game_screen.dart';
 import '../home/home.dart';
-import '../vip/vip_screen.dart';
 import 'dashboard_controller.dart';
 import 'widget/side_menu.dart';
 import 'package:get/get.dart';
@@ -54,11 +51,17 @@ class DashboardScreen extends StatelessWidget {
                         return PageView(
                           physics: const NeverScrollableScrollPhysics(),
                           controller: dashboardController.pageController,
-                          children: const [
+                          children: [
                             HomeScreen(),
-                            VipScreen(),
-                            GameScreen(),
-                            PlayGameScreen(),
+                            SizedBox(
+                              child: Text('2'),
+                            ),
+                            SizedBox(
+                              child: Text('3'),
+                            ),
+                            SizedBox(
+                              child: Text('4'),
+                            ),
                             SizedBox(
                               child: Text('5'),
                             ),

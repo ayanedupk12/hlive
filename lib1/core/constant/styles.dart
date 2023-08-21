@@ -22,7 +22,7 @@ class TextStyles {
   static TextStyle? get appBarText => Get.textTheme.displayLarge?.copyWith(
       fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
   static TextStyle? get bodyText => Get.textTheme.bodyMedium?.copyWith(
-      fontSize: 14,
+      fontSize: 16,
       color: Colors.black.withOpacity(0.8),
       fontWeight: FontWeight.w600);
   static TextStyle? get bottomBlackText => bodyText?.copyWith(

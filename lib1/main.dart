@@ -6,7 +6,6 @@ import 'views/screens/LoginScreen/LoginScreen.dart';
 import 'views/screens/dashboard/dashboard_screen.dart';
 
 void main() {
-
   runApp(const MyApp());
 }
 
@@ -17,8 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Hi Live',
+      title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: primaryColor,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
