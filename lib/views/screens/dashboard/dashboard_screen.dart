@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hllive/core/constant/colors.dart';
+import 'package:hllive/views/screens/dashboard/widget/LiveChat.dart';
+import 'package:hllive/views/screens/dashboard/widget/MissionsScreen.dart';
 import 'package:hllive/views/screens/game/game_screen.dart';
 
 import '../../responsive.dart';
+import '../../widgets/RoundButton.dart';
+import '../BonusCode/BonusCode.dart';
+import '../PrivacyPolicy/PrivacyPolicy.dart';
 import '../game/play_game_screen.dart';
 import '../home/home.dart';
 import '../vip/vip_screen.dart';
@@ -59,9 +64,9 @@ class DashboardScreen extends StatelessWidget {
                             VipScreen(),
                             GameScreen(),
                             PlayGameScreen(),
-                            SizedBox(
-                              child: Text('5'),
-                            ),
+                            BonusCodeScreen(),
+                            PrivacyPolicyScreen()
+
                           ],
                           onPageChanged: (index) {
                             dashboardController.selectedOptionIndex.value =
@@ -70,6 +75,16 @@ class DashboardScreen extends StatelessWidget {
                         );
                       },
                     ),
+                  ),
+                  Padding(
+                    padding:  EdgeInsets.symmetric(vertical: context.height*0.07,horizontal: 8),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                      RoundIconButton(backgroundColor: orangeColor, onPressed: () {Get.dialog(MissionsScreen());}, child: Icon(Icons.wallet_giftcard,color: whiteColor,),),
+                      SizedBox(height: 10,),
+                        RoundIconButton(backgroundColor: blueColor, onPressed: () {Get.dialog(LiveChat());}, child: Icon(Icons.message,color: whiteColor,),),
+                    ],),
                   ),
 
                 ],

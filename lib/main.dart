@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hllive/views/screens/SignUpScreen/SignUpScreen.dart';
 
 import 'core/constant/colors.dart';
 import 'views/screens/dashboard/dashboard_screen.dart';

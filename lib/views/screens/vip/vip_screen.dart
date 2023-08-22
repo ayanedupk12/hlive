@@ -39,7 +39,6 @@ class VipScreen extends StatelessWidget {
                         SizedBox(
                           width: context.width * 0.05,
                         ),
-
                         Image.asset(AppAssets.imgPlayButton , height: 40,width: 40,),
                         SizedBox(
                           width: 40,

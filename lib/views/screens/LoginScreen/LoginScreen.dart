@@ -118,7 +118,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20.0),
-                  CustomTextField(
+                  CustomTextField1(
                     width: context.width / 4,
                     height: Get.height * 0.05,
                     prefixIcon: IconButton(
@@ -133,7 +133,7 @@ class LoginScreen extends StatelessWidget {
                     controller: TextEditingController(),
                   ),
                   const SizedBox(height: 10.0),
-                  CustomTextField(
+                  CustomTextField1(
                     width: context.width / 4,
                     height: Get.height * 0.05,
                     prefixIcon: IconButton(

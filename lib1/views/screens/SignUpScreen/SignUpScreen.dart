@@ -110,7 +110,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20.0),
-                  CustomTextField(
+                  CustomTextField1(
                     width: context.width/4,
                     height: Get.height*0.05,
                     prefixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.email_outlined,size: 20,color: Colors.white.withOpacity(0.5))),
@@ -119,7 +119,7 @@ class SignUpScreen extends StatelessWidget {
                     controller: TextEditingController(),
                   ),
                   const SizedBox(height: 10.0),
-                  CustomTextField(
+                  CustomTextField1(
                     width: context.width/4,
                     height: Get.height*0.05,
                     prefixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.lock,size: 20,color: Colors.white.withOpacity(0.5))),
@@ -146,7 +146,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10.0),
-                  CustomTextField(
+                  CustomTextField1(
                     width: context.width/4,
                     height: Get.height*0.05,
                     prefixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.email_outlined,size: 20,color: Colors.white.withOpacity(0.5),)),

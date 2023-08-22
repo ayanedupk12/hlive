@@ -2,7 +2,7 @@ class AppAssets{
 // VIP IMAGES
 
 
-    // side menu icon
+    // Dashboard
     static const String icHome = 'assets/images/icHome.png';
     static const String icVip = 'assets/images/icVip.png';
     static const String icShare = 'assets/images/icShare.png';
@@ -10,6 +10,8 @@ class AppAssets{
     static const String icBonus = 'assets/images/icBonus.png';
     static const String icPrivacyPolicy = 'assets/images/icPrivacyPolicy.png';
     static const String icESport = 'assets/images/icEsport.png';
+    static const String gemIcon = 'assets/images/gemIcon.png';
+    static const String handIcon = 'assets/images/hand.png';
 
     // Home screen images
     static const String imgPromo = 'assets/images/imgPromo.png';
@@ -30,9 +32,8 @@ class AppAssets{
     static const String imgGift2 = 'assets/images/gift2.png';
     static const String imgUpgradeGift = 'assets/images/upgrade_gift.png';
 
-
-
-
+    //Bounus code
+    static const String giftBox = 'assets/images/GiftBox.png';
 
 
 
