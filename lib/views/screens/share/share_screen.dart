@@ -123,18 +123,9 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
   late TabController _tabController;
 
   final List<Widget> tabs = [
-    Padding(
-      padding:   EdgeInsets.symmetric(horizontal: 60),
-      child: Tab(text: 'FORMS'),
-    ),
-    Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60),
-      child: Tab(text: 'TO INVITE'),
-    ),
-    Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 60),
-      child: Tab(text: 'STATISTICS'),
-    ),
+    Tab(text: 'FORMS'),
+    Tab(text: 'TO INVITE'),
+    Tab(text: 'STATISTICS'),
   ];
 
   int selectedIndex = 0;
@@ -152,11 +143,12 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
     return Column(
       children: [
         Container(
-          height: 50, // Adjust the height as needed
+          height: 70, // Adjust the height as needed
           decoration: BoxDecoration(
             color: primaryColor, // Background color for the entire TabBar
           ),
           child: TabBar(
+            indicatorSize: TabBarIndicatorSize.tab,
             controller: _tabController,
             padding: EdgeInsets.symmetric(
               vertical:  6,

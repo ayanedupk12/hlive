@@ -126,7 +126,7 @@ class CustomTabBar extends StatefulWidget  {
 class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  final List<Tab> tabs = [
+  final List<Widget> tabs = [
     Tab(text: 'MY CASHBACK'),
     Tab(text: 'ABOUT CASHBACK'),
   ];
@@ -146,15 +146,16 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
     return Column(
       children: [
         Container(
-          height: 50, // Adjust the height as needed
+          height: 70, // Adjust the height as needed
           decoration: BoxDecoration(
             color: primaryColor, // Background color for the entire TabBar
           ),
           child: TabBar(
+            indicatorSize: TabBarIndicatorSize.tab,
             controller: _tabController,
-            padding: EdgeInsets.symmetric(
-              vertical:  6,
-            ),
+            // padding: EdgeInsets.symmetric(
+            //   vertical:  1,
+            // ),
 
             tabs: tabs,
             onTap: (index) {
