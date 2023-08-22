@@ -8,6 +8,7 @@ import 'package:hllive/views/screens/share/share_screen.dart';
 import '../../responsive.dart';
 import '../../widgets/RoundButton.dart';
 import '../BonusCode/BonusCode.dart';
+import '../CashBack/CashBack.dart';
 import '../PrivacyPolicy/PrivacyPolicy.dart';
 import '../game/play_game_screen.dart';
 import '../home/home.dart';
@@ -64,7 +65,8 @@ class DashboardScreen extends StatelessWidget {
                             HomeScreen(),
                             VipScreen(),
                             ShareScreen(),
-                            GameScreen(),
+                            CashBackScreen(),
+                            // GameScreen(),
 
                             BonusCodeScreen(),
                             PrivacyPolicyScreen()

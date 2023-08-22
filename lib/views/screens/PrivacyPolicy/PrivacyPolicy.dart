@@ -138,21 +138,29 @@ class CashBackContainer extends StatelessWidget {
   final Color? containerColor;
   final String? title;
   final String? numberPercent;
+  final double? width;
+  final double? height;
+  final double? leftRoundness;
+  final double? rightRoundness;
   const CashBackContainer({
     this.containerColor,
     this.title,
     this.numberPercent,
+    this.width=300,
+    this.height=100,
+    this.rightRoundness=0,
+    this.leftRoundness=0,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.18,
-      width: Get.width * 0.25,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
           color: containerColor ?? Color(0xff2283F6),
-          borderRadius: BorderRadius.circular(6)),
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(leftRoundness!),topLeft:  Radius.circular(leftRoundness!),bottomRight:  Radius.circular(rightRoundness!),topRight:  Radius.circular(rightRoundness!),)),
       child: Padding(
         padding: const EdgeInsets.only(top: 20, right: 10, left: 20),
         child: Row(
@@ -187,8 +195,8 @@ class CashBackContainer extends StatelessWidget {
               ],
             ),
             Container(
-              height: Get.height * 0.2,
-              width: Get.width * 0.16,
+              height: height! * 0.2,
+              width: width! * 0.16,
               child: Image.asset(
                 AppAssets.icCashBack,
                 fit: BoxFit.contain,
