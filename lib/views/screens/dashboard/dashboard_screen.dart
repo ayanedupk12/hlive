@@ -3,6 +3,7 @@ import 'package:hllive/core/constant/colors.dart';
 import 'package:hllive/views/screens/dashboard/widget/LiveChat.dart';
 import 'package:hllive/views/screens/dashboard/widget/MissionsScreen.dart';
 import 'package:hllive/views/screens/game/game_screen.dart';
+import 'package:hllive/views/screens/share/share_screen.dart';
 
 import '../../responsive.dart';
 import '../../widgets/RoundButton.dart';
@@ -59,11 +60,12 @@ class DashboardScreen extends StatelessWidget {
                         return PageView(
                           physics: const NeverScrollableScrollPhysics(),
                           controller: dashboardController.pageController,
-                          children: const [
+                          children:   [
                             HomeScreen(),
                             VipScreen(),
+                            ShareScreen(),
                             GameScreen(),
-                            PlayGameScreen(),
+
                             BonusCodeScreen(),
                             PrivacyPolicyScreen()
 
