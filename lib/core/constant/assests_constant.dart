@@ -34,6 +34,7 @@ class AppAssets{
 
     //Bounus code
     static const String giftBox = 'assets/images/GiftBox.png';
+    static const String imgProfit = 'assets/images/imgProfit.png';
 
 
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hllive/core/constant/assests_constant.dart';
+import 'package:hllive/views/screens/share/share_controller.dart';
  import 'package:hllive/views/widgets/button_widget.dart';
 
 import '../../../core/constant/colors.dart';
@@ -10,7 +12,7 @@ import '../game/game_screen.dart';
 class ShareScreen extends StatelessWidget {
   ShareScreen({Key? key}) : super(key: key);
 
- // final ShareScreenController controller = Get.put(ShareScreenController());
+  final ShareScreenController controller = Get.put(ShareScreenController());
 
   @override
   Widget build(BuildContext context) {
@@ -120,10 +122,19 @@ class CustomTabBar extends StatefulWidget  {
 class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
-  final List<Tab> tabs = [
-    Tab(text: 'FORMS'),
-    Tab(text: 'TO INVITE'),
-    Tab(text: 'STATISTICS'),
+  final List<Widget> tabs = [
+    Padding(
+      padding:   EdgeInsets.symmetric(horizontal: 60),
+      child: Tab(text: 'FORMS'),
+    ),
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 60),
+      child: Tab(text: 'TO INVITE'),
+    ),
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 60),
+      child: Tab(text: 'STATISTICS'),
+    ),
   ];
 
   int selectedIndex = 0;
@@ -655,16 +666,17 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                   children: [
                     Column(
                       children: [
+                        SizedBox(height: 10,),
                         Text('TOTAL PROFIT' , style: TextStyles.buttonText?.copyWith(
                             fontSize: 16
                         ),),
-                        Container(
+                        Image.asset(
+
+
+                          AppAssets.imgProfit,
                           height: context.height * 0.1,
                           width: context.width * 0.1,
-                          color: whiteColor,
-                          child: Center(
-                            child: Text('Image here'),
-                          ),
+                          fit: BoxFit.contain,
                         ),
 
                       ],
@@ -679,10 +691,10 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Column(children: [
-                                Text('Guest Users', style: TextStyles.buttonText?.copyWith(
+                                Text('TOTAL BONUS', style: TextStyles.buttonText?.copyWith(
                                   fontSize:16,
                                 ),),
-                                Text('0', style: TextStyles.buttonText?.copyWith(
+                                Text('R\$0', style: TextStyles.buttonText?.copyWith(
                                     fontSize:16,
                                     color: Color(0xffFFA101)
                                 ),),
@@ -690,23 +702,10 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
 
                               ],),
                               Column(children: [
-                                Text('Deposited Users', style: TextStyles.buttonText?.copyWith(
+                                Text('Betting commission', style: TextStyles.buttonText?.copyWith(
                                   fontSize:16,
                                 ),),
-                                Text('0', style: TextStyles.buttonText?.copyWith(
-                                    fontSize:16,
-                                    color: Color(0xffFFA101)
-
-                                ),),
-
-
-                              ],),
-
-                              Column(children: [
-                                Text('Bonus Today', style: TextStyles.buttonText?.copyWith(
-                                  fontSize:16,
-                                ),),
-                                Text('0', style: TextStyles.buttonText?.copyWith(
+                                Text('R\$0', style: TextStyles.buttonText?.copyWith(
                                     fontSize:16,
                                     color: Color(0xffFFA101)
 
@@ -716,10 +715,23 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                               ],),
 
                               Column(children: [
-                                Text('Yesterday Bonus', style: TextStyles.buttonText?.copyWith(
+                                Text('Invitation Bonus', style: TextStyles.buttonText?.copyWith(
                                   fontSize:16,
                                 ),),
-                                Text('0', style: TextStyles.buttonText?.copyWith(
+                                Text('R\$0', style: TextStyles.buttonText?.copyWith(
+                                    fontSize:16,
+                                    color: Color(0xffFFA101)
+
+                                ),),
+
+
+                              ],),
+
+                              Column(children: [
+                                Text('INVITE ACHIEVEMENT BONUS', style: TextStyles.buttonText?.copyWith(
+                                  fontSize:16,
+                                ),),
+                                Text('R\$0', style: TextStyles.buttonText?.copyWith(
                                     fontSize:16,
                                     color: Color(0xffFFA101)
 
@@ -736,11 +748,11 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                         Padding(
                           padding: const EdgeInsets.only(left: 60),
                           child: Text(
-                            'Are you a blogger with a large audience and large following?\n'
-                                'We offer you a partnership program with a special referral bonus.Please contact our manager to discuss terms.\n'
-                                'https://wa.me/message/L7OEABEFPVD4D1Important:\n'
-                                ' Only users who have passed the  requirements and been approved by their\n'
-                                ' managercan participate in the program.'
+                            'Deposited Users: \n'
+                                'You earn a commission for every bet you invite users to place,  win or lose.\n'
+                                'So all you have to do is improve your gaming skills, think how to  win the game and share it with everyone to\n'
+                                'help more people win with your method.\n'
+                                'We want all players to have fun at BETFIERY, whether it is the fun  of winning bets or the game itself!'
 
 
                             , style: TextStyles.buttonText?.copyWith(

@@ -115,8 +115,9 @@ class LiveChat extends StatelessWidget {
                             Text('USER ID', style: TextStyles.smallWhiteText?.copyWith(fontSize: 12, color: whiteColor),),
                               SizedBox(height: 5,),
                               CustomTextField1(
+                                fillColor: Colors.white.withOpacity(0.1),
                                 width: context.width*0.18,
-                              prefixIcon: Icon(Icons.email),
+                              prefixIcon: Icon(Icons.account_box,color: Colors.white.withOpacity(0.4),),
                                 height: context.height*.05,
                                 labelText: '', controller: TextEditingController(),enabled: false,
                             ),
@@ -124,8 +125,9 @@ class LiveChat extends StatelessWidget {
                               Text('Game Account', style: TextStyles.smallWhiteText?.copyWith(fontSize: 12, color: whiteColor),),
                               SizedBox(height: 5,),
                               CustomTextField1(
+                                fillColor: Colors.white.withOpacity(0.1),
                                 width: context.width*0.18,
-                                prefixIcon: Icon(Icons.email),
+                                prefixIcon: Icon(Icons.gamepad,color: Colors.white.withOpacity(0.4),),
                                 height: context.height*.05,
                                 labelText: '', controller: TextEditingController(),enabled: false,
                               ),
