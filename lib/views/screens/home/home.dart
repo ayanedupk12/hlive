@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return SizedBox(
       height: context.height,
       child: Column(
@@ -23,6 +24,7 @@ class HomeScreen extends StatelessWidget {
             width: context.width * 0.8,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15), color: primaryColor),
+
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -112,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   Expanded(
                                       child: Image.asset(
-                                    AppAssets.imgPromo,
+                                    AppAssets.imgGanhar,
                                     fit: BoxFit.fill,
                                   )),
                                   const SizedBox(
@@ -158,21 +160,50 @@ class HomeScreen extends StatelessWidget {
                                           color: Colors.blue,
                                           borderRadius:
                                               BorderRadius.circular(14)),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                              height: 30,
+                                              width: context.width * 0.087,
+                                              decoration: const BoxDecoration(
+                                                  color: buttonColor,
+                                                borderRadius: BorderRadius.only(topLeft: Radius.circular(14), topRight: Radius.circular(14),)
+                                                 ),
+                                              child: const Center(child: Text("BIGWIN"))),
+                                          Expanded(
+                                              child: Image.asset(
+                                                AppAssets.imgPromo,
+                                                fit: BoxFit.fill,
+                                              )),
+
+                                          Container(
+                                              height: 30,
+                                              width: context.width * 0.087,
+                                              decoration: const BoxDecoration(
+                                                  color: Colors.red,
+                                                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(14), bottomRight: Radius.circular(14),)
+                                              ),
+                                              child: const Center(child: Text("R897.9"))),
+                                        ],
+                                      ),
+
                                     ),
                                     index == 6
                                         ? Padding(
-                                          padding: const EdgeInsets.only(left: 18.0),
-                                          child: Container(
+                                            padding: const EdgeInsets.only(
+                                                left: 18.0),
+                                            child: Container(
                                               height: context.height * 0.18,
                                               width: context.width * 0.06,
                                               decoration: BoxDecoration(
                                                   color: Colors.grey,
                                                   borderRadius:
-                                                      BorderRadius.circular(14)),
+                                                      BorderRadius.circular(
+                                                          14)),
                                               child: const Center(
                                                   child: Text('See All')),
                                             ),
-                                        )
+                                          )
                                         : const SizedBox(),
                                   ],
                                 ),
@@ -198,28 +229,29 @@ class HomeScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                           color: Colors.blue,
                                           borderRadius:
-                                          BorderRadius.circular(14)),
+                                              BorderRadius.circular(14)),
                                     ),
                                     index == 6
                                         ? Padding(
-                                      padding: const EdgeInsets.only(left: 18.0),
-                                      child: Container(
-                                        height: context.height * 0.18,
-                                        width: context.width * 0.06,
-                                        decoration: BoxDecoration(
-                                            color: Colors.grey,
-                                            borderRadius:
-                                            BorderRadius.circular(14)),
-                                        child: const Center(
-                                            child: Text('See All')),
-                                      ),
-                                    )
+                                            padding: const EdgeInsets.only(
+                                                left: 18.0),
+                                            child: Container(
+                                              height: context.height * 0.18,
+                                              width: context.width * 0.06,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.grey,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          14)),
+                                              child: const Center(
+                                                  child: Text('See All')),
+                                            ),
+                                          )
                                         : const SizedBox(),
                                   ],
                                 ),
                               );
                             })),
-
                   ],
                 ),
               ),
