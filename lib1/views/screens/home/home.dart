@@ -21,11 +21,11 @@ class HomeScreen extends StatelessWidget {
             width: context.width * 0.8,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15), color: primaryColor),
-            child: const Row(
+            child:  Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Row(
-                  children: [
+                  children: const [
                     Text(
                       'Sign Up and get',
                       style: TextStyle(
@@ -39,22 +39,22 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
-                ElevatedButtonWidget(
+                const ElevatedButtonWidget(
                   width: 120,
                   buttonText: '  Sign In  ',
                   borderColor: Colors.red,
                   buttonColor: Colors.red,
                 ),
-                ElevatedButtonWidget(
+                const ElevatedButtonWidget(
                   width: 120,
                   buttonText: '  Sign Up  ',
                   borderColor: Colors.blue,
                   buttonColor: Colors.blue,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
               ],

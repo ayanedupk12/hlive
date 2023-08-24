@@ -21,13 +21,13 @@ class SignUpScreen extends StatelessWidget {
             flex: 2,
             child: Container(
               color: const Color(0xff161F2C),
-              child: const Center(
+              child: Center(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text(
                         'Sign Up to HL LIVE',
                         style: TextStyle(
@@ -79,9 +79,9 @@ class SignUpScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 40.0),
-                  const Row(
+                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text(
                         'Sign up to get ',
                         style: TextStyle(
@@ -131,9 +131,9 @@ class SignUpScreen extends StatelessWidget {
                   const SizedBox(height: 30.0),
                   SizedBox(
                     width: context.width/4,
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           'Invitation Code',
                           style: TextStyle(
@@ -211,9 +211,9 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10.0),
-                  const Row(
+                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text('Already have an account?',style: TextStyle(color: Color(0xff3F5773),fontSize: 16,)),
                       SizedBox(width: 5.0),
                       Text(

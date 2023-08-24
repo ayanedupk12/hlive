@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/constant/colors.dart';
 import '../../core/constant/styles.dart';
@@ -91,9 +92,9 @@ class ElevatedButtonWidget extends StatelessWidget {
                                 ),
                           Text(
                             buttonText,
-                            style: TextStyles.buttonText?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
                                 color: buttonTextColor ?? whiteColor),
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,

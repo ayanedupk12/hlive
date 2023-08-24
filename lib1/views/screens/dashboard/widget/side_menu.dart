@@ -17,10 +17,10 @@ class SideMenu extends StatelessWidget {
           SizedBox(
             width: 80,
             height: context.height * 0.12,
-            child: const Center(
+            child:  Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text(
                     "LOGO",
                     style: TextStyle(

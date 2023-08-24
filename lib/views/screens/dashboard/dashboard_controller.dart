@@ -7,145 +7,200 @@ import '../../../core/constant/colors.dart';
 import '../../widgets/button_widget.dart';
 import '../BonusCode/BonusCode.dart';
 import '../CashBack/CashBack.dart';
+import '../LoginScreen/LoginScreen.dart';
 import '../PrivacyPolicy/PrivacyPolicy.dart';
+import '../SignUpScreen/SignUpScreen.dart';
 import '../home/home.dart';
 import '../share/share_screen.dart';
 import '../vip/vip_screen.dart';
 
-class DashboardController extends  GetxController{
+class DashboardController extends GetxController {
+  int selectedOptionIndex = 0;
+  bool showDrawer = true;
+  bool centro1Open = false;
+  bool centro2Open = true;
+  onOffDrawer() {
+    showDrawer = !showDrawer;
+    update();
+  }
 
-  int  selectedOptionIndex = 0;
-  bool showDrawer=true;
-  bool centro1Open=false;
-  bool centro2Open=true;
-  onOffDrawer(){
-    showDrawer=!showDrawer;
+  openCentro1() {
+    centro2Open = false;
+    centro1Open = !centro1Open;
     update();
   }
-  openCentro1(){
-    centro2Open=false;
-    centro1Open=!centro1Open;
+
+  openCentro2() {
+    centro1Open = false;
+    centro2Open = !centro2Open;
     update();
   }
-  openCentro2(){
-    centro1Open=false;
-    centro2Open=!centro2Open;
-    update();
-  }
-  double dashBoardWidth=0;
-  dashboardWidth(dashWidth){
-    dashBoardWidth=dashWidth;
-    pages=
-    [
-      VipScreen(width: dashBoardWidth,),
-      CashBackScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
+
+  double dashBoardWidth = 0;
+  dashboardWidth(dashWidth) {
+    dashBoardWidth = dashWidth;
+    pages = [
+      VipScreen(
+        width: dashBoardWidth,
+      ),
+      CashBackScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
       //extra
-      BonusCodeScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
-      BonusCodeScreen(width: dashBoardWidth,),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
+      BonusCodeScreen(
+        width: dashBoardWidth,
+      ),
       // BonusCodeScreen(width: dashBoardWidth,),
       // BonusCodeScreen(width: dashBoardWidth,),
       // BonusCodeScreen(width: dashBoardWidth,),
-      HomeScreen(width: dashBoardWidth,),
+      HomeScreen(
+        width: dashBoardWidth,
+      ),
       //extra
-      HomeScreen(width: dashBoardWidth,),
-      VipScreen(width: dashBoardWidth,),
-      ShareScreen(width: dashBoardWidth,),
+      HomeScreen(
+        width: dashBoardWidth,
+      ),
+      VipScreen(
+        width: dashBoardWidth,
+      ),
+      ShareScreen(
+        width: dashBoardWidth,
+      ),
       // GameScreen(),
-      PrivacyPolicyScreen(width: dashBoardWidth,),
-      PrivacyPolicyScreen(width: dashBoardWidth,),
+      PrivacyPolicyScreen(
+        width: dashBoardWidth,
+      ),
+      PrivacyPolicyScreen(
+        width: dashBoardWidth,
+      ),
     ];
     // update();
   }
 
-  List pages=[];
+  List pages = [];
 
-  homeScreenHeader(BuildContext context){
+  homeScreenHeader(BuildContext context) {
     return Container(
-      height: context.height * 0.13,
-      width: context.width,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: primaryColor),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: ListTile(
-          leading: IconButton(
-              onPressed: (){
+        height: 83,
+        width: context.width,
+        decoration: const BoxDecoration(
+          color: Color(0xff1F2A39),
+        ),
+        child: Center(
+          child: ListTile(
+            leading: InkWell(
+              onTap: () {
                 onOffDrawer();
               },
-              icon: Icon(Icons.menu,color: Colors.white,size: 35,)),
-
-          trailing: SizedBox(
-            width: context.width/2,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      'Sign Up and get',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      '10% discount',
-                      style: TextStyle(
-                          color: buttonColor, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                ElevatedButtonWidget(
-                  width: 120,
-                  buttonText: '  Sign In  ',
-                  borderColor: Colors.red,
-                  buttonColor: Colors.red,
-                ),
-                ElevatedButtonWidget(
-                  width: 120,
-                  buttonText: '  Sign Up  ',
-                  borderColor: Colors.blue,
-                  buttonColor: Colors.blue,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-              ],
+              child: Image.asset(
+                'assets/images/menu_icon.png',
+                height: 25.17,
+                width: 48,
+              ),
+            ),
+            trailing: SizedBox(
+              width: context.width / 2,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ElevatedButtonWidget(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Center(
+                            child: Container(
+                              margin: EdgeInsets.all(context.height * 0.12),
+                              child: const Card(
+                                child: LoginScreen(),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    width: 200,
+                    height: 55,
+                    buttonText: 'Login',
+                    borderColor: Color(0xff2283F6),
+                    buttonColor: Color(0xff2283F6),
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  ElevatedButtonWidget(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Center(
+                            child: Container(
+                              margin: EdgeInsets.all(context.height * 0.12),
+                              child: const Card(
+                                child: SignUpScreen(),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    width: 200,
+                    height: 55,
+                    buttonText: 'Create an account',
+                    borderColor: Color(0xffC0102C),
+                    buttonColor: Color(0xffC0102C),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      )
-    );
+        ));
   }
-  vipHeader(){
+
+  vipHeader() {
     return VipHeader();
   }
 
-
-
-
   void onOptionButtonTap(int index) {
-     selectedOptionIndex = index;
-     update();
+    selectedOptionIndex = index;
+    update();
     // pageController.jumpToPage(index); // Navigate to the relevant page
   }
-  late  PageController pageController = PageController();
+
+  late PageController pageController = PageController();
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   void openDrawer() {
     scaffoldKey.currentState?.openDrawer();
   }
-
 
   // Custom property to store the selected route name
   RxString selectedRoute = '/home'.obs;
@@ -157,10 +212,10 @@ class DashboardController extends  GetxController{
 }
 
 class VipHeader extends StatelessWidget {
-   VipHeader({
+  VipHeader({
     super.key,
   });
-  final dashBoardController=Get.find<DashboardController>();
+  final dashBoardController = Get.find<DashboardController>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -170,16 +225,21 @@ class VipHeader extends StatelessWidget {
           borderRadius: BorderRadius.circular(15), color: secondaryColor),
       child: ListTile(
         leading: Padding(
-          padding: const EdgeInsets.all(15.0,),
+          padding: const EdgeInsets.all(
+            15.0,
+          ),
           child: IconButton(
-              onPressed: (){
+              onPressed: () {
                 dashBoardController.onOffDrawer();
               },
-              icon: Icon(Icons.menu,color: Colors.white,size: 35,)),
+              icon: Icon(
+                Icons.menu,
+                color: Colors.white,
+                size: 35,
+              )),
         ),
-
         trailing: SizedBox(
-          width: context.width/2,
+          width: context.width / 2,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -190,8 +250,8 @@ class VipHeader extends StatelessWidget {
                   ),
                   Text(
                     '100% BONUS',
-                    style:
-                    TextStyle(color: buttonColor, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: buttonColor, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -202,7 +262,8 @@ class VipHeader extends StatelessWidget {
                 height: Get.height * 0.06,
                 width: Get.width * 0.15,
                 decoration: BoxDecoration(
-                    color: primaryColor, borderRadius: BorderRadius.circular(10)),
+                    color: primaryColor,
+                    borderRadius: BorderRadius.circular(10)),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 5),
                   child: Row(
@@ -248,12 +309,11 @@ class VipHeader extends StatelessWidget {
               SizedBox(
                 width: 20,
               ),
-
               InkWell(
-                  onTap: (){
+                  onTap: () {
                     Get.dialog(ProfileDialogue());
                   },
-                  child:  Profile())
+                  child: Profile())
             ],
           ),
         ),
@@ -261,6 +321,7 @@ class VipHeader extends StatelessWidget {
     );
   }
 }
+
 class Profile extends StatelessWidget {
   const Profile({
     super.key,

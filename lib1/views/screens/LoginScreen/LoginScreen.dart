@@ -17,13 +17,13 @@ class LoginScreen extends StatelessWidget {
             flex: 2,
             child: Container(
               color: const Color(0xff161F2C),
-              child: const Center(
+              child:  Center(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text(
                         'Sign in to HL LIVE',
                         style: TextStyle(
@@ -235,9 +235,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10.0),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text('Don’t have an account? ',
                           style: TextStyle(
                             color: Color(0xff3F5773),

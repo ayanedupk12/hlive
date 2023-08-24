@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hllive/core/constant/assests_constant.dart';
 
-import '../../../../core/constant/colors.dart';
 import '../../../widgets/Circular_Icon.dart';
 import '../dashboard_controller.dart';
 
@@ -19,10 +18,10 @@ class SideMenu extends StatelessWidget {
           SizedBox(
             width: 100,
             height: context.height * 0.12,
-            child: const Center(
+            child:  Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text(
                     "LOGO",
                     style: TextStyle(
