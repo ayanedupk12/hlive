@@ -500,6 +500,7 @@ class _HomeScreenState extends State<HomeScreen>
                           color: Color(0xff1F2A39),
                         ),
                         child: TabBar(
+                          isScrollable: false, // This prevents swiping between tabs
                           controller: _tabController,
                           dividerColor: Colors.transparent,
                           indicatorColor: Colors.transparent,

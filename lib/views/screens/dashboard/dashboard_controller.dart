@@ -19,6 +19,11 @@ class DashboardController extends GetxController {
   bool showDrawer = true;
   bool centro1Open = false;
   bool centro2Open = true;
+  @override
+  void onInit() {
+    selectedOptionIndex=14;
+    super.onInit();
+  }
   onOffDrawer() {
     showDrawer = !showDrawer;
     update();
@@ -81,6 +86,15 @@ class DashboardController extends GetxController {
         width: dashBoardWidth,
       ),
       //extra
+      HomeScreen(
+        width: dashBoardWidth,
+      ),
+      HomeScreen(
+        width: dashBoardWidth,
+      ),
+      HomeScreen(
+        width: dashBoardWidth,
+      ),
       HomeScreen(
         width: dashBoardWidth,
       ),
