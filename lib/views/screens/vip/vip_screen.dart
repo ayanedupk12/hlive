@@ -8,22 +8,22 @@ import '../../widgets/button_widget.dart';
 import '../dashboard/widget/ProfileDialogue.dart';
 
 class VipScreen extends StatelessWidget {
-  const VipScreen({Key? key}) : super(key: key);
+  double width;
+   VipScreen({required this.width,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.height,
+      // height: context.height,
       child: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          // mainAxisSize: MainAxisSize.min,
           children: [
-            VipHeader(),
             const SizedBox(
               height: 20,
             ),
             Container(
-              width: context.width * 0.8,
+              width: width * 0.8,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: secondaryColor),
@@ -37,13 +37,13 @@ class VipScreen extends StatelessWidget {
                       children: [
                         // Image.asset('assets/images/
                         SizedBox(
-                          width: context.width * 0.05,
+                          width: width * 0.0,
                         ),
                         Image.asset(AppAssets.imgPlayButton , height: 40,width: 40,),
                         SizedBox(
                           width: 40,
                         ),
-                        DepositBetWidget(),
+                        DepositBetWidget(width: context.width,),
 
                         //Image.asset(AppAssets.imgPlayButton, height: 100, width: 50,),
                         SizedBox(
@@ -59,7 +59,7 @@ class VipScreen extends StatelessWidget {
                     // Reward container
                     Container(
                       height: context.height * 0.28,
-                      width: context.width * 0.6,
+                      width: width * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: primaryColor),
@@ -115,7 +115,7 @@ class VipScreen extends StatelessWidget {
                     ),
 
                     Container(
-                      width: context.width * 0.6,
+                      width: width * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: primaryColor),
@@ -247,7 +247,7 @@ class VipScreen extends StatelessWidget {
                               child: ElevatedButtonWidget(
                                 buttonText: 'CLAIM CASHBACK',
                                 buttonColor: Color(0xff2283F6),
-                                width: Get.width * 0.2,
+                                width: width * 0.2,
                               ),
                             ),
 
@@ -265,7 +265,7 @@ class VipScreen extends StatelessWidget {
 
                     ///Benefit Container
                     Container(
-                      width: context.width * 0.6,
+                      width: width * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: primaryColor),
@@ -307,7 +307,7 @@ class VipScreen extends StatelessWidget {
                                       ),
                                       Container(
                                         height: Get.height * 0.1,
-                                        width: Get.width * 0.25,
+                                        width: width * 0.25,
                                         decoration: BoxDecoration(
                                           color: secondaryColor,
                                         ),
@@ -378,7 +378,7 @@ class VipScreen extends StatelessWidget {
                                       ),
                                       Container(
                                         height: Get.height * 0.1,
-                                        width: Get.width * 0.25,
+                                        width: width * 0.25,
                                         decoration: BoxDecoration(
                                           color: secondaryColor,
                                         ),
@@ -441,7 +441,7 @@ class VipScreen extends StatelessWidget {
                                                 color: Color(0xffA9A9A9)),
                                       ),
                                       Container(
-                                        width: Get.width * 0.25,
+                                        width: width * 0.25,
                                         decoration: BoxDecoration(
                                           color: secondaryColor,
                                         ),
@@ -547,7 +547,7 @@ class VipScreen extends StatelessWidget {
                                                 color: Color(0xffA9A9A9)),
                                       ),
                                       Container(
-                                        width: Get.width * 0.25,
+                                        width: width * 0.25,
                                         decoration: BoxDecoration(
                                           color: secondaryColor,
                                         ),
@@ -705,7 +705,7 @@ class VipScreen extends StatelessWidget {
                     ),
 
                     Container(
-                      width: context.width * 0.6,
+                      width: width * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: primaryColor),
@@ -732,7 +732,7 @@ class VipScreen extends StatelessWidget {
                                 ]),
                             Container(
                                 height: Get.height * 0.06,
-                                width: Get.width * 0.15,
+                                width: width * 0.15,
                                 decoration: BoxDecoration(
                                     color: Color(0xff2283F6),
                                     borderRadius: BorderRadius.circular(8)),
@@ -932,7 +932,9 @@ class RewardContainer extends StatelessWidget {
 }
 
 class DepositBetWidget extends StatelessWidget {
-  const DepositBetWidget({
+  double width;
+   DepositBetWidget({
+    required this.width,
     super.key,
   });
 
@@ -942,7 +944,7 @@ class DepositBetWidget extends StatelessWidget {
       children: [
         Container(
           height: context.height * 0.22,
-          width: context.width * 0.6,
+          width: width * 0.6,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10), color: primaryColor),
           child: Padding(
@@ -960,7 +962,7 @@ class DepositBetWidget extends StatelessWidget {
                         AppAssets.
                         imgCrown,
                         height: Get.height * 0.1,
-                        width: Get.width * 0.08,
+                        width: width * 0.08,
                         fit: BoxFit.contain,
                       ),
                       SizedBox(height: 10,),
@@ -971,7 +973,7 @@ class DepositBetWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(width: Get.width * 0.1),
+                SizedBox(width: width * 0.1),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -986,7 +988,7 @@ class DepositBetWidget extends StatelessWidget {
                             style: TextStyle(color: whiteColor),
                           ),
                           SizedBox(
-                            width: Get.width * 0.12,
+                            width: width * 0.12,
                           ),
                           Text(
                             'R0/R20',
@@ -1002,7 +1004,7 @@ class DepositBetWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   8), // Use responsive_sizer for borderRadius
                               child: SizedBox(
-                                width: Get.width * 0.2,
+                                width: width * 0.2,
                                 child: const LinearProgressIndicator(
                                   minHeight:
                                       12, // Use responsive_sizer for minHeight
@@ -1031,7 +1033,7 @@ class DepositBetWidget extends StatelessWidget {
                             style: TextStyle(color: whiteColor),
                           ),
                           SizedBox(
-                            width: Get.width * 0.12,
+                            width: width * 0.12,
                           ),
                           Text(
                             'R0/R20',
@@ -1047,7 +1049,7 @@ class DepositBetWidget extends StatelessWidget {
                               borderRadius: BorderRadius.circular(
                                   8), // Use responsive_sizer for borderRadius
                               child: SizedBox(
-                                width: Get.width * 0.2,
+                                width: width * 0.2,
                                 child: LinearProgressIndicator(
                                   minHeight:
                                       12, // Use responsive_sizer for minHeight

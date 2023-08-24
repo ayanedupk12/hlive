@@ -11,7 +11,8 @@ import '../LoginScreen/widgets/CustomTextField.dart';
 import '../dashboard/widget/ProfileDialogue.dart';
 
 class BonusCodeScreen extends StatelessWidget {
-  const BonusCodeScreen({Key? key}) : super(key: key);
+  double width;
+   BonusCodeScreen({required this.width,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +24,11 @@ class BonusCodeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VipHeader(),
             const SizedBox(
               height: 20,
             ),
             Container(
-              width: context.width * 0.8,
+              width: width * 0.8,
               height: context.height*0.8,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -45,7 +45,7 @@ class BonusCodeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: context.height*0.02,),
                   Container(
-                    width: context.width * 0.4,
+                    width: width * 0.4,
                     height: context.height*0.65,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
@@ -72,7 +72,7 @@ class BonusCodeScreen extends StatelessWidget {
 
                             CustomTextField1(
                               enabled: false,
-                              width: context.width*0.18,
+                              width: width*0.18,
                               prefixIcon: Icon(Icons.pin),
                               height: context.height*.05,
                               labelText: '', controller: TextEditingController(),
@@ -83,7 +83,7 @@ class BonusCodeScreen extends StatelessWidget {
                             SizedBox(height: context.height*0.05,),
                             Center(child: CustomButton(
                               backgroundColor: redColor,
-                              text: 'Redemption', onPressed: (){},height: context.height*0.04,width: context.width*0.15,fontSize: context.width*0.01,)),
+                              text: 'Redemption', onPressed: (){},height: context.height*0.04,width: width*0.15,fontSize: context.width*0.01,)),
 
                           ],
                         ),

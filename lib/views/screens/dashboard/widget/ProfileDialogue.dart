@@ -67,7 +67,7 @@ class ProfileDialogue extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20,),
-            DepositBetWidget(
+            DepositBetWidget(width: context.width,
 
               // width: context.width*0.9,height: context.height*0.8,
             ),
