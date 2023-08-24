@@ -169,6 +169,7 @@ class VipHeader extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15), color: secondaryColor),
       child: ListTile(
+
         leading: Padding(
           padding: const EdgeInsets.all(15.0,),
           child: IconButton(
