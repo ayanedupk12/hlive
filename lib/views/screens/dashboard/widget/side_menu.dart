@@ -48,8 +48,7 @@ class SideMenu extends StatelessWidget {
 
 class DrawerListTile extends StatelessWidget {
   const DrawerListTile(
-      {Key? key,
-      required this.title,
+      {Key? key, this.title='',
       required this.svgSrc,
       required this.press,
       this.color,
@@ -61,6 +60,7 @@ class DrawerListTile extends StatelessWidget {
       this.detailsOpen=false,
       this.bannerText='',
       this.inRow=false,
+      this.isDropDownMenuItem=false,
       this.textColor})
       : super(key: key);
 
@@ -75,6 +75,7 @@ class DrawerListTile extends StatelessWidget {
   final bool inRow;
   final bool detailsOpen;
   final bool isAdvertiseButton;
+  final bool isDropDownMenuItem;
   final VoidCallback? suffixIconPress;
 
 
@@ -84,7 +85,7 @@ class DrawerListTile extends StatelessWidget {
       onTap: press,
       child: SizedBox(
           // height: 50,
-          width: inRow?context.width*0.1:Get.width,
+          width: isAdvertiseButton?200:inRow?110:241,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -99,32 +100,32 @@ class DrawerListTile extends StatelessWidget {
               child: banner!=null
                   ?SizedBox(
                 child: Container(
-                        height: isAdvertiseButton?context.height*0.1:context.height*0.06,
-                        width: context.width,
+                        height: isAdvertiseButton?110:isDropDownMenuItem?57:inRow?55:67,
+                        width: inRow?110:240,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.0), // Adjust the radius as needed
                           ),
                         child: Stack(
                           children: [
                             SizedBox(
-                              height: isAdvertiseButton?context.height*0.1:context.height*0.06,
-                              width: context.width,
+                              height: isDropDownMenuItem?60:inRow?55:isAdvertiseButton?120:67,
+                              width: inRow?110:isAdvertiseButton?200:240,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10.0), // Same radius as the container
+                                borderRadius: BorderRadius.circular(7.0), // Same radius as the container
                                 child: Image.asset(
                                   banner!, // Your image asset path
-                                  width: context.height*0.06, // Match the container width
-                                  height: context.width, // Match the container height
+                                  width: inRow?110:isAdvertiseButton?200:240, // Match the container width
+                                  height:isAdvertiseButton?130:isDropDownMenuItem?60:inRow?55:72, // Match the container height
                                   fit: BoxFit.fitWidth,
                                 ),
                               ),
                             ),
                             if(title!='')Positioned(
-                                top: 0,
-                                left: 0,
+                                top: 6,
+                                left: 3,
                                 child: Padding(
                                   padding: const EdgeInsets.only(left: 10.0,right: 5),
-                                  child: Text(title,style: TextStyle(fontSize: 12,color: Colors.white,fontWeight: FontWeight.bold),),
+                                  child: Text(title,style: TextStyle(fontSize: 12,color: Colors.white,fontWeight: FontWeight.w900),),
                                 )),
 
                             if(bannerText!='')Positioned(
@@ -141,7 +142,7 @@ class DrawerListTile extends StatelessWidget {
                                 ),)),
                             if(suffixIconPress!=null)Positioned(
                                 right: context.width*0.012,
-                                bottom: context.height*0.017,
+                                bottom: context.height*0.02,
                                 child: InkWell(
                                   onTap: suffixIconPress,
                                   child: CircularIcon(
@@ -186,9 +187,11 @@ class DrawerListTile extends StatelessWidget {
 class DrawerItem {
   final String title;
   final String svgSrc;
+  final String? banner;
 
   DrawerItem({
     required this.title,
+     this.banner,
     required this.svgSrc,
   });
 }
@@ -209,43 +212,65 @@ List<String> banners=[
 ];
 
 final List<DrawerItem> drawerItems = [
-  DrawerItem(title: "BONUS VIP", svgSrc:  AppAssets.icVip),
+  DrawerItem(title: "BONUS VIP", svgSrc:  AppAssets.icVip,banner: AppAssets.bonusVip),
   DrawerItem(
     title: "CASH BACK",
     svgSrc: AppAssets.icCashBack,
-  ),
-  DrawerItem(title: "RODA", svgSrc: AppAssets.icHome),
+      banner: AppAssets.cashBack  ),
+  DrawerItem(title: "RODA", svgSrc: AppAssets.icHome,banner: AppAssets.roda),
   DrawerItem(
     title: "Bonus Code",
     svgSrc: AppAssets.icBonus,
+    banner: AppAssets.bonusCode
   ),
   DrawerItem(
     title: "CENTRO\nDE JOGOS",
     svgSrc: AppAssets.icBonus,
+    banner: AppAssets.centerOfGames
   ),
   DrawerItem(
     title: "DICE",
     svgSrc: AppAssets.icBonus,
+    banner: AppAssets.dice
   ),
   DrawerItem(
     title: "MINES",
     svgSrc: AppAssets.icBonus,
+    banner: AppAssets.mines
   ),
   DrawerItem(
     title: "CRASH",
     svgSrc: AppAssets.icBonus,
+    banner: AppAssets.banner3
   ),
   DrawerItem(
     title: "DOUBLE",
     svgSrc: AppAssets.icBonus,
+    banner: AppAssets.double
   ),
   DrawerItem(
-    title: "TODOS OS JOGOS",
+    title: "All games",
     svgSrc: AppAssets.icBonus,
   ),
   DrawerItem(
-    title: "CENTRO DE",
+    title: "Center of the promotions",
     svgSrc: AppAssets.icBonus,
+    banner: AppAssets.centerOfPromotion
+  ),
+  DrawerItem(
+    title: "banner1",
+    svgSrc: AppAssets.icBonus,
+    banner: AppAssets.ban1
+  ),
+  DrawerItem(
+    title: "banner2",
+    svgSrc: AppAssets.icBonus,
+    banner: AppAssets.ban2
+  ),
+  DrawerItem(
+    title: "banner3",
+    svgSrc: AppAssets.icBonus,
+    banner: AppAssets.ban3
   ),
   DrawerItem(title: "Home", svgSrc: AppAssets.icHome),
   DrawerItem(title: "SHARE", svgSrc: AppAssets.icShare),

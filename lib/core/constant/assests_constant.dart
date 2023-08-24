@@ -3,7 +3,7 @@ class AppAssets{
 
 
     // Dashboard
-    static const String icHome = 'assets/images/icHome.png';
+    static const String icHome = 'assets/icons/homeIcon.png';
     static const String icVip = 'assets/images/icVip.png';
     static const String icShare = 'assets/images/icShare.png';
     static const String icCashBack = 'assets/images/icCashBack.png';
@@ -12,6 +12,28 @@ class AppAssets{
     static const String icESport = 'assets/images/icEsport.png';
     static const String gemIcon = 'assets/images/gemIcon.png';
     static const String handIcon = 'assets/images/hand.png';
+    static const String drawerOpen = 'assets/icons/drawerOpen.png';
+    static const String drawerClose = 'assets/icons/drawerClose.png';
+    static const String liveCasino = 'assets/icons/liveCasino.png';
+    static const String liveChat = 'assets/icons/liveChat.png';
+    static const String referenceIcon = 'assets/icons/referenceIcon.png';
+    static const String telegram = 'assets/icons/telegram.png';
+    static const String vipRatingIcon = 'assets/icons/vipRatingIcon.png';
+    static const String ban1 = 'assets/banners/ban1.png';
+    static const String ban2 = 'assets/banners/ban2.png';
+    static const String ban3= 'assets/banners/ban3.png';
+
+    //banners
+    static const String banner3 = 'assets/banners/banner3.png';
+    static const String bonusCode = 'assets/banners/bonusCode.png';
+    static const String bonusVip = 'assets/banners/bonusVIP.png';
+    static const String cashBack = 'assets/banners/cashBack.png';
+    static const String centerOfGames = 'assets/banners/centerOfGames.png';
+    static const String centerOfPromotion = 'assets/banners/CenterOfPromotion.png';
+    static const String dice = 'assets/banners/dice.png';
+    static const String double = 'assets/banners/double.png';
+    static const String mines = 'assets/banners/mines.png';
+    static const String roda = 'assets/banners/roda.png';
 
     // Home screen images
     static const String imgPromo = 'assets/images/imgPromo.png';

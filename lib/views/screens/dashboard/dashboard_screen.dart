@@ -25,7 +25,7 @@ class DashboardScreen extends StatelessWidget {
     return GetBuilder<DashboardController>(
         init: DashboardController(),
         builder: (dashboardController) {
-          dashboardController.dashboardWidth(dashboardController.showDrawer?context.width*0.91:context.width*1.05);
+          dashboardController.dashboardWidth(context.width);
           return Scaffold(
             backgroundColor: primaryColor,
             key: dashboardController.scaffoldKey,
@@ -80,8 +80,8 @@ class CustomSideBar extends StatelessWidget {
           child: Visibility(
             visible: dashboardController.showDrawer,
             child: Container(
-              height: dashboardController.centro1Open?context.height*1.3:dashboardController.centro2Open?context.height*1.4:context.height*0.91,
-              width: context.width*0.22,
+              height: dashboardController.centro1Open?context.height*1.3:dashboardController.centro2Open?context.height*1.5:context.height,
+              width: 260,
               decoration: BoxDecoration(
                 color: secondaryColor.withOpacity(0.8),
                 borderRadius: const  BorderRadius.only(
@@ -96,9 +96,9 @@ class CustomSideBar extends StatelessWidget {
                   child: Column(
                     children: [
                       DrawerListTile(
-                        title: drawerItems[0].title,
+                        // title: drawerItems[0].title,
                         svgSrc: drawerItems[0].svgSrc,
-                        banner: banners[0],
+                        banner: drawerItems[0].banner,
                         press: () {
                           dashboardController.onOptionButtonTap(0);
                         },
@@ -115,9 +115,9 @@ class CustomSideBar extends StatelessWidget {
                             : Colors.white,
                       ),
                       DrawerListTile(
-                        title: drawerItems[1].title,
+                        // title: drawerItems[1].title,
                         svgSrc: drawerItems[1].svgSrc,
-                        banner: banners[1],
+                        banner: drawerItems[1].banner,
                         press: () {
                           dashboardController.onOptionButtonTap(1);
                         },
@@ -134,12 +134,13 @@ class CustomSideBar extends StatelessWidget {
                             : Colors.white,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          SizedBox(width: 1,),
                           DrawerListTile(
-                            title: drawerItems[2].title,
+                            // title: drawerItems[2].title,
                             svgSrc: drawerItems[2].svgSrc,
-                            banner: banners[2],
+                            banner: drawerItems[2].banner,
                             inRow: true,
                             press: () {
                               dashboardController.onOptionButtonTap(2);
@@ -157,9 +158,9 @@ class CustomSideBar extends StatelessWidget {
                                 : Colors.white,
                           ),
                           DrawerListTile(
-                            title: drawerItems[3].title,
+                            // title: drawerItems[3].title,
                             svgSrc: drawerItems[3].svgSrc,
-                            banner: banners[3],
+                            banner: drawerItems[3].banner,
                             inRow: true,
                             press: () {
                               dashboardController.onOptionButtonTap(3);
@@ -176,6 +177,8 @@ class CustomSideBar extends StatelessWidget {
                                 ? Colors.blue
                                 : Colors.white,
                           ),
+                          SizedBox(width: 1,),
+
                         ],
                       ),
                       DrawerListTile(
@@ -183,9 +186,9 @@ class CustomSideBar extends StatelessWidget {
                           dashboardController.openCentro1();
                         },
                         detailsOpen: dashboardController.centro1Open,
-                        title: 'drawerItems[4].title',
+                        // title: 'drawerItems[4].title',
                         svgSrc: drawerItems[4].svgSrc,
-                        banner: banners[4],
+                        banner: drawerItems[4].banner,
                         press: () {
                           dashboardController.onOptionButtonTap(4);
                         },
@@ -219,9 +222,10 @@ class CustomSideBar extends StatelessWidget {
                                       SizedBox(
                                         width: context.width*0.09,
                                         child: DrawerListTile(
-                                          title: drawerItems[5].title,
+                                          isDropDownMenuItem:true,
+                                          // title: drawerItems[5].title,
                                           svgSrc: drawerItems[5].svgSrc,
-                                          banner: banners[5],
+                                          banner: drawerItems[5].banner,
                                           press: () {
                                             // dashboardController.onOptionButtonTap(5);
                                           },
@@ -241,9 +245,10 @@ class CustomSideBar extends StatelessWidget {
                                       SizedBox(
                                         width: context.width*0.09,
                                         child: DrawerListTile(
-                                          title: drawerItems[6].title,
+                                          isDropDownMenuItem:true,
+                                          // title: drawerItems[6].title,
                                           svgSrc: drawerItems[6].svgSrc,
-                                          banner: banners[6],
+                                          banner: drawerItems[6].banner,
                                           press: () {
                                             // dashboardController.onOptionButtonTap(6);
                                           },
@@ -264,8 +269,9 @@ class CustomSideBar extends StatelessWidget {
                                   ),
                                   DrawerListTile(
                                     title: drawerItems[7].title,
+                                    isDropDownMenuItem:true,
                                     svgSrc: drawerItems[7].svgSrc,
-                                    banner: banners[5],
+                                    banner: drawerItems[7].banner,
                                     press: () {
                                       // dashboardController.onOptionButtonTap(7);
                                     },
@@ -283,9 +289,9 @@ class CustomSideBar extends StatelessWidget {
                                   ),
                                   DrawerListTile(
                                     bannerText: 'NEVUO',
-                                    title: drawerItems[8].title,
+                                    isDropDownMenuItem:true,
                                     svgSrc: drawerItems[8].svgSrc,
-                                    banner: banners[5],
+                                    banner: drawerItems[8].banner,
                                     press: () {
                                       // dashboardController.onOptionButtonTap(8);
                                     },
@@ -302,7 +308,7 @@ class CustomSideBar extends StatelessWidget {
                                         : Colors.white,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
                                     child: DrawerListTile(
                                       title: drawerItems[9].title,
                                       svgSrc: drawerItems[9].svgSrc,
@@ -335,9 +341,9 @@ class CustomSideBar extends StatelessWidget {
                           dashboardController.openCentro2();
                         },
                         detailsOpen: dashboardController.centro2Open,
-                        title: drawerItems[10].title,
+                        // title: drawerItems[10].title,
                         svgSrc: drawerItems[10].svgSrc,
-                        banner: banners[4],
+                        banner: drawerItems[10].banner,
                         press: () {
                           dashboardController.onOptionButtonTap(10);
                         },
@@ -367,9 +373,9 @@ class CustomSideBar extends StatelessWidget {
                                 children: [
                                   DrawerListTile(
                                     isAdvertiseButton: true,
-                                    title: drawerItems[7].title,
-                                    svgSrc: drawerItems[7].svgSrc,
-                                    banner: banners[5],
+                                    // title: drawerItems[7].title,
+                                    svgSrc: drawerItems[11].svgSrc,
+                                    banner: drawerItems[11].banner,
                                     press: () {
                                       // dashboardController.onOptionButtonTap(7);
                                     },
@@ -387,9 +393,9 @@ class CustomSideBar extends StatelessWidget {
                                   ),
                                   DrawerListTile(
                                     isAdvertiseButton: true,
-                                    title: drawerItems[7].title,
-                                    svgSrc: drawerItems[7].svgSrc,
-                                    banner: banners[5],
+                                    // title: drawerItems[12].title,
+                                    svgSrc: drawerItems[12].svgSrc,
+                                    banner: drawerItems[12].banner,
                                     press: () {
                                       // dashboardController.onOptionButtonTap(7);
                                     },
@@ -407,9 +413,9 @@ class CustomSideBar extends StatelessWidget {
                                   ),
                                   DrawerListTile(
                                     isAdvertiseButton: true,
-                                    title: drawerItems[7].title,
-                                    svgSrc: drawerItems[7].svgSrc,
-                                    banner: banners[5],
+                                    title: drawerItems[13].title,
+                                    svgSrc: drawerItems[13].svgSrc,
+                                    banner: drawerItems[13].banner,
                                     press: () {
                                       // dashboardController.onOptionButtonTap(7);
                                     },
@@ -428,8 +434,8 @@ class CustomSideBar extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.symmetric(horizontal: 35.0),
                                     child: DrawerListTile(
-                                      title: drawerItems[9].title,
-                                      svgSrc: drawerItems[9].svgSrc,
+                                      title: drawerItems[14].title,
+                                      svgSrc: drawerItems[14].svgSrc,
                                       press: () {
                                         // dashboardController.onOptionButtonTap(9);
                                       },
@@ -457,97 +463,12 @@ class CustomSideBar extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: DrawerListTile(
-                          title: drawerItems[11].title,
-                          svgSrc: drawerItems[11].svgSrc,
-                          press: () {
-                            dashboardController.onOptionButtonTap(11);
-                          },
-                          color: dashboardController.selectedOptionIndex ==11
-                              ? Colors.blue
-                              : Colors.transparent,
-                          textColor:
-                          dashboardController.selectedOptionIndex ==11
-                              ? Colors.white
-                              : Colors.grey,
-                          imageColor:
-                          dashboardController.selectedOptionIndex ==11
-                              ? Colors.blue
-                              : Colors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: DrawerListTile(
-                          title: drawerItems[12].title,
-                          svgSrc: drawerItems[12].svgSrc,
-                          press: () {
-                            dashboardController.onOptionButtonTap(12);
-                          },
-                          color: dashboardController.selectedOptionIndex ==12
-                              ? Colors.blue
-                              : Colors.transparent,
-                          textColor:
-                          dashboardController.selectedOptionIndex ==12
-                              ? Colors.white
-                              : Colors.grey,
-                          imageColor:
-                          dashboardController.selectedOptionIndex ==12
-                              ? Colors.blue
-                              : Colors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: DrawerListTile(
-                          title: drawerItems[13].title,
-                          svgSrc: drawerItems[13].svgSrc,
-                          press: () {
-                            dashboardController.onOptionButtonTap(13);
-                          },
-                          color: dashboardController.selectedOptionIndex ==13
-                              ? Colors.blue
-                              : Colors.transparent,
-                          textColor:
-                          dashboardController.selectedOptionIndex ==13
-                              ? Colors.white
-                              : Colors.grey,
-                          imageColor:
-                          dashboardController.selectedOptionIndex ==13
-                              ? Colors.blue
-                              : Colors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: DrawerListTile(
-                          title: drawerItems[14].title,
-                          svgSrc: drawerItems[14].svgSrc,
-                          press: () {
-                            dashboardController.onOptionButtonTap(14);
-                          },
-                          color: dashboardController.selectedOptionIndex ==14
-                              ? Colors.blue
-                              : Colors.transparent,
-                          textColor:
-                          dashboardController.selectedOptionIndex ==14
-                              ? Colors.white
-                              : Colors.grey,
-                          imageColor:
-                          dashboardController.selectedOptionIndex ==14
-                              ? Colors.blue
-                              : Colors.white,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: DrawerListTile(
                           title: drawerItems[15].title,
                           svgSrc: drawerItems[15].svgSrc,
                           press: () {
-                            dashboardController.onOptionButtonTap(15);
-                            Get.dialog(LiveChat());
+                            // dashboardController.onOptionButtonTap(15);
                           },
-                          backgroundColor: dashboardController.selectedOptionIndex ==15
+                          color: dashboardController.selectedOptionIndex ==15
                               ? Colors.blue
                               : Colors.transparent,
                           textColor:
@@ -556,6 +477,91 @@ class CustomSideBar extends StatelessWidget {
                               : Colors.grey,
                           imageColor:
                           dashboardController.selectedOptionIndex ==15
+                              ? Colors.blue
+                              : Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: DrawerListTile(
+                          title: drawerItems[16].title,
+                          svgSrc: drawerItems[16].svgSrc,
+                          press: () {
+                            // dashboardController.onOptionButtonTap(16);
+                          },
+                          color: dashboardController.selectedOptionIndex ==16
+                              ? Colors.blue
+                              : Colors.transparent,
+                          textColor:
+                          dashboardController.selectedOptionIndex ==16
+                              ? Colors.white
+                              : Colors.grey,
+                          imageColor:
+                          dashboardController.selectedOptionIndex ==16
+                              ? Colors.blue
+                              : Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: DrawerListTile(
+                          title: drawerItems[17].title,
+                          svgSrc: drawerItems[17].svgSrc,
+                          press: () {
+                            // dashboardController.onOptionButtonTap(17);
+                          },
+                          color: dashboardController.selectedOptionIndex ==17
+                              ? Colors.blue
+                              : Colors.transparent,
+                          textColor:
+                          dashboardController.selectedOptionIndex ==17
+                              ? Colors.white
+                              : Colors.grey,
+                          imageColor:
+                          dashboardController.selectedOptionIndex ==17
+                              ? Colors.blue
+                              : Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: DrawerListTile(
+                          title: drawerItems[18].title,
+                          svgSrc: drawerItems[18].svgSrc,
+                          press: () {
+                            // dashboardController.onOptionButtonTap(18);
+                          },
+                          color: dashboardController.selectedOptionIndex ==18
+                              ? Colors.blue
+                              : Colors.transparent,
+                          textColor:
+                          dashboardController.selectedOptionIndex ==18
+                              ? Colors.white
+                              : Colors.grey,
+                          imageColor:
+                          dashboardController.selectedOptionIndex ==18
+                              ? Colors.blue
+                              : Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: DrawerListTile(
+                          title: drawerItems[19].title,
+                          svgSrc: drawerItems[19].svgSrc,
+                          press: () {
+                            // dashboardController.onOptionButtonTap(19);
+                            Get.dialog(LiveChat());
+                          },
+                          backgroundColor: dashboardController.selectedOptionIndex ==19
+                              ? Colors.blue
+                              : Colors.transparent,
+                          textColor:
+                          dashboardController.selectedOptionIndex ==19
+                              ? Colors.white
+                              : Colors.grey,
+                          imageColor:
+                          dashboardController.selectedOptionIndex ==19
                               ? Colors.blue
                               : Colors.white,
                         ),
@@ -565,20 +571,20 @@ class CustomSideBar extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: DrawerListTile(
-                          title: drawerItems[16].title,
-                          svgSrc: drawerItems[16].svgSrc,
+                          title: drawerItems[20].title,
+                          svgSrc: drawerItems[20].svgSrc,
                           press: () {
-                            dashboardController.onOptionButtonTap(16);
+                            // dashboardController.onOptionButtonTap(20);
                           },
-                          backgroundColor: dashboardController.selectedOptionIndex ==16
+                          backgroundColor: dashboardController.selectedOptionIndex ==20
                               ? Colors.blue
                               : Colors.transparent,
                           textColor:
-                          dashboardController.selectedOptionIndex ==16
+                          dashboardController.selectedOptionIndex ==20
                               ? Colors.white
                               : Colors.grey,
                           imageColor:
-                          dashboardController.selectedOptionIndex ==16
+                          dashboardController.selectedOptionIndex ==20
                               ? Colors.blue
                               : Colors.white,
                         ),

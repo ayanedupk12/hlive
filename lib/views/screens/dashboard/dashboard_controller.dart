@@ -68,59 +68,63 @@ class DashboardController extends  GetxController{
 
   homeScreenHeader(BuildContext context){
     return Container(
-      height: context.height * 0.13,
+      height: 83,
       width: context.width,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: primaryColor),
+          borderRadius: BorderRadius.circular(15), color: secondaryColor),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: ListTile(
-          leading: IconButton(
-              onPressed: (){
-                onOffDrawer();
-              },
-              icon: Icon(Icons.menu,color: Colors.white,size: 35,)),
+        child: Center(
+          child: ListTile(
+            leading: IconButton(
+                onPressed: (){
+                  onOffDrawer();
+                },
+                icon: Image.asset(showDrawer?AppAssets.drawerClose:AppAssets.drawerOpen,height: 25,width: 48,)),
 
-          trailing: SizedBox(
-            width: context.width/2,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      'Sign Up and get',
-                      style: TextStyle(
-                        color: Colors.white,
+            trailing: SizedBox(
+              width: context.width/1.5,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Sign Up and get',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '10% discount',
-                      style: TextStyle(
-                          color: buttonColor, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                ElevatedButtonWidget(
-                  width: 120,
-                  buttonText: '  Sign In  ',
-                  borderColor: Colors.red,
-                  buttonColor: Colors.red,
-                ),
-                ElevatedButtonWidget(
-                  width: 120,
-                  buttonText: '  Sign Up  ',
-                  borderColor: Colors.blue,
-                  buttonColor: Colors.blue,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-              ],
+                      Text(
+                        '10% discount',
+                        style: TextStyle(
+                            color: buttonColor, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  ElevatedButtonWidget(
+                    width: 200,
+                    height: 55,
+                    buttonText: '  Sign In  ',
+                    borderColor: Colors.red,
+                    buttonColor: Colors.red,
+                  ),
+                  ElevatedButtonWidget(
+                    width: 200,
+                    height: 65,
+                    buttonText: '  Sign Up  ',
+                    borderColor: Colors.blue,
+                    buttonColor: Colors.blue,
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
