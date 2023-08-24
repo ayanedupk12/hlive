@@ -500,7 +500,7 @@ class _HomeScreenState extends State<HomeScreen>
                           color: Color(0xff1F2A39),
                         ),
                         child: TabBar(
-                          isScrollable: false, // This prevents swiping between tabs
+                          isScrollable: false,
                           controller: _tabController,
                           dividerColor: Colors.transparent,
                           indicatorColor: Colors.transparent,
@@ -543,6 +543,7 @@ class _HomeScreenState extends State<HomeScreen>
                         width: context.width,
                         height: 2500,
                         child: TabBarView(
+                          physics: NeverScrollableScrollPhysics(),
                           controller: _tabController,
                           children: [
                             _view(),
@@ -1245,7 +1246,8 @@ class _HomeScreenState extends State<HomeScreen>
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            controller: _internalCon,
+            controller: _slotsCon,
+
             child: Row(
               children: const [
                 GamePlayWidget(
@@ -1331,7 +1333,7 @@ class _HomeScreenState extends State<HomeScreen>
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            controller: _internalCon,
+            controller: _casinoCon,
             child: Row(
               children: const [
                 GamePlayWidget(

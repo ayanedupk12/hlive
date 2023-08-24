@@ -131,7 +131,7 @@ class DashboardController extends GetxController {
                 onOffDrawer();
               },
               child: Image.asset(
-                'assets/images/menu_icon.png',
+                showDrawer?'assets/icons/drawerClose.png':'assets/icons/drawerOpen.png',
                 height: 25.17,
                 width: 48,
               ),

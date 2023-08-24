@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:hllive/core/constant/colors.dart';
 import 'package:hllive/views/screens/dashboard/widget/LiveChat.dart';
@@ -225,6 +227,7 @@ class CustomSideBar extends StatelessWidget {
                                         width: context.width*0.09,
                                         child: DrawerListTile(
                                           isDropDownMenuItem:true,
+                                          inRow: true,
                                           // title: drawerItems[5].title,
                                           svgSrc: drawerItems[5].svgSrc,
                                           banner: drawerItems[5].banner,
@@ -248,6 +251,7 @@ class CustomSideBar extends StatelessWidget {
                                         width: context.width*0.09,
                                         child: DrawerListTile(
                                           isDropDownMenuItem:true,
+                                          inRow:true,
                                           // title: drawerItems[6].title,
                                           svgSrc: drawerItems[6].svgSrc,
                                           banner: drawerItems[6].banner,
