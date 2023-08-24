@@ -11,7 +11,8 @@ import '../LoginScreen/widgets/CustomTextField.dart';
 import '../dashboard/widget/ProfileDialogue.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
-  const PrivacyPolicyScreen({Key? key}) : super(key: key);
+  double width;
+   PrivacyPolicyScreen({required this.width,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +24,12 @@ class PrivacyPolicyScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VipHeader(),
+
             const SizedBox(
               height: 20,
             ),
             Container(
-              width: context.width * 0.8,
+              width: width * 0.8,
               height: context.height*0.8,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
@@ -45,7 +46,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   ),
                   SizedBox(height: context.height*0.02,),
                   Container(
-                    width: context.width * 0.7,
+                    width: width * 0.7,
                     height: context.height*0.65,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
@@ -60,7 +61,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                           children: [
                             // SizedBox(height: context.height*0.01,),
                             Padding(
-                              padding:  EdgeInsets.only(left: context.width*0.11),
+                              padding:  EdgeInsets.only(left: width*0.11),
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text(
@@ -71,43 +72,43 @@ class PrivacyPolicyScreen extends StatelessWidget {
                             ),
                             SizedBox(height: context.height*0.05,),
                             Padding(
-                              padding:  EdgeInsets.only(left: context.width*0.11),
+                              padding:  EdgeInsets.only(left: width*0.11),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  CustomButton(text: 'KYC Policy', onPressed: (){},height: context.height*0.04,width: context.width*0.2,fontSize: context.width*0.01,),
+                                  CustomButton(text: 'KYC Policy', onPressed: (){},height: width*0.04,width: width*0.2,fontSize: width*0.01,),
                                   SizedBox(width: 20,),
-                                  CustomButton(text: 'Responsible Gaming', onPressed: (){},height: context.height*0.04,width: context.width*0.2,fontSize: context.width*0.01,),
+                                  CustomButton(text: 'Responsible Gaming', onPressed: (){},height: width*0.04,width: width*0.2,fontSize: width*0.01,),
                                 ],
                               ),
                             ),
                             SizedBox(height: 20,),
                             Padding(
-                              padding:  EdgeInsets.only(left: context.width*0.11),
+                              padding:  EdgeInsets.only(left: width*0.11),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  CustomButton(text: 'Terms and conditions', onPressed: (){},height: context.height*0.04,width: context.width*0.2,fontSize: context.width*0.01,),
+                                  CustomButton(text: 'Terms and conditions', onPressed: (){},height: width*0.04,width: width*0.2,fontSize: width*0.01,),
                                   SizedBox(width: 20,),
-                                  CustomButton(text: 'Equitable', onPressed: (){},height: context.height*0.04,width: context.width*0.2,fontSize: context.width*0.01,),
+                                  CustomButton(text: 'Equitable', onPressed: (){},height: width*0.04,width:width*0.2,fontSize: width*0.01,),
                                 ],
                               ),
                             ),
                             SizedBox(height: 20,),
                             Padding(
-                              padding:  EdgeInsets.only(left: context.width*0.11),
+                              padding:  EdgeInsets.only(left: width*0.11),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  CustomButton(text: 'FAQ', onPressed: (){},height: context.height*0.04,width: context.width*0.2,fontSize: context.width*0.01,),
+                                  CustomButton(text: 'FAQ', onPressed: (){},height: width*0.04,width: width*0.2,fontSize: width*0.01,),
                                   SizedBox(width: 20,),
-                                  CustomButton(text: 'HL LIVE legal Notice', onPressed: (){},height: context.height*0.04,width: context.width*0.2,fontSize: context.width*0.01,),
+                                  CustomButton(text: 'HL LIVE legal Notice', onPressed: (){},height: width*0.04,width: width*0.2,fontSize: width*0.01,),
                                 ],
                               ),
                             ),
                             SizedBox(height: context.height*0.05,),
                             Padding(
-                              padding:  EdgeInsets.only(left: context.width*0.11),
+                              padding:  EdgeInsets.only(left: width*0.11),
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text(
@@ -457,141 +458,6 @@ class DepositBetWidget extends StatelessWidget {
   }
 }
 
-class VipHeader extends StatelessWidget {
-  const VipHeader({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: context.height * 0.12,
-      width: context.width * 0.8,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: secondaryColor),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              Text(
-                '100% BONUS',
-                style:
-                    TextStyle(color: buttonColor, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: 30,
-          ),
-          Container(
-            height: Get.height * 0.06,
-            width: Get.width * 0.15,
-            decoration: BoxDecoration(
-                color: primaryColor, borderRadius: BorderRadius.circular(10)),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "R\$10",
-                    style: TextStyle(
-                        color: whiteColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
-                  Container(
-                    height: Get.height * 0.06,
-                    width: Get.width * 0.08,
-                    decoration: BoxDecoration(
-                      color: redColor,
-                    ),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          height: 30,
-                          width: 45,
-                          child: Image.asset(
-                            AppAssets.imgDeposit,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                        const Text(
-                          "Deposit",
-                          style: TextStyle(
-                              color: whiteColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          ),
 
-          InkWell(
-              onTap: (){
-                Get.dialog(ProfileDialogue());
-              },
-              child: const Profile())
 
-        ],
-      ),
-    );
-  }
-}
-
-class Profile extends StatelessWidget {
-  const Profile({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: Get.height * 0.06,
-      width: Get.width * 0.1,
-      decoration: BoxDecoration(
-          color: primaryColor, borderRadius: BorderRadius.circular(10)),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Row(
-          children: [
-            // Image.asset(AppAssets.imgProfile , height: 20,width: 20,),
-            //use icon insted of profile picture
-            Icon(
-              Icons.person,
-              color: whiteColor,
-            ),
-
-            SizedBox(
-              width: 5,
-            ),
-            Text(
-              'VIP 0',
-              style: TextStyle(
-                color: Color(0xffF4973F),
-                fontSize: 12,
-              ),
-            ),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_drop_down_sharp,
-                  color: whiteColor,
-                ))
-          ],
-        ),
-      ),
-    );
-  }
-}

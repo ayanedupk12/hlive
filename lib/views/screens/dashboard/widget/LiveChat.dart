@@ -29,12 +29,12 @@ class LiveChat extends StatelessWidget {
 
           ]),
       content: SizedBox(
-        height: context.height/1.3,
+        height: context.height/1.1,
         width: context.width/1.5,
         child: Column(
           children: [
             Container(
-              height: context.height*0.7,
+              height: context.height*0.8,
               width: context.width*0.5,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10), color: primaryColor),
@@ -70,7 +70,7 @@ class LiveChat extends StatelessWidget {
                               Card(
                                 color: secondaryColor,
                                 child: SizedBox(
-                                  height: context.height*0.54,
+                                  height: context.height*0.63,
                                   width: context.width,
                                   child: Column(
                                     children: [

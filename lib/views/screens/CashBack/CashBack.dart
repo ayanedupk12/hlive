@@ -11,113 +11,114 @@ import '../game/game_screen.dart';
 
 
 class CashBackScreen extends StatelessWidget {
-  CashBackScreen({Key? key}) : super(key: key);
+  double width;
+  CashBackScreen({required this.width,Key? key}) : super(key: key);
 
  // final ShareScreenController controller = Get.put(ShareScreenController());
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.height,
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const GameHeader(),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              width: context.width * 0.8,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: secondaryColor),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('CASHBACK', style: TextStyles.bodyText?.copyWith(color: whiteColor),),
-                        SizedBox(height: 10,),
-                        // Padding(
-                        //   padding: EdgeInsets.symmetric(horizontal: 20),
-                        //   child: Container(
-                        //     height: context.height * 0.08, // Use responsive_sizer for height
-                        //     decoration: BoxDecoration(
-                        //       color: primaryColor,
-                        //       borderRadius: BorderRadius.circular(10), // Use responsive_sizer for borderRadius
-                        //
-                        //     ),
-                        //     child: Padding(
-                        //       padding: EdgeInsets.symmetric(horizontal: 12),
-                        //       child: TabBar(
-                        //         padding: EdgeInsets.symmetric(
-                        //            vertical:  6,
-                        //         ), // Use responsive_sizer for padding
-                        //         controller: controller.tabController,
-                        //         labelColor: Colors.white,
-                        //         unselectedLabelColor: whiteColor,
-                        //
-                        //         indicator: BoxDecoration(
-                        //           borderRadius: BorderRadius.circular(4), // Use responsive_sizer for borderRadius
-                        //           color: Color(0xff2283F6),
-                        //         ),
-                        //         tabs:    [
-                        //           Padding(
-                        //             padding: EdgeInsets.symmetric(horizontal: 20),
-                        //             child: Tab(text: 'FORMS'),
-                        //           ),
-                        //           Padding(
-                        //             padding: EdgeInsets.symmetric(horizontal: 30),
-                        //             child: Tab(text: 'TO INVITE'),
-                        //           ),
-                        //           Padding(
-                        //             padding: EdgeInsets.symmetric(horizontal: 30),
-                        //             child: Tab(text: 'STATISTICS'),
-                        //           ),
-                        //         ],
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-                        // SizedBox(height: 20,),
-                        // SizedBox(
-                        //   height: 500,
-                        //   child: TabBarView(
-                        //     controller: controller.tabController,
-                        //     physics: const NeverScrollableScrollPhysics(), // Disable swiping between tabs
-                        //     children: [
-                        //      Text('Tab1'),
-                        //      Text('Tab2'),
-                        //      Text('Tab3')
-                        //     ],
-                        //   ),
-                        // ),
+      // height: context.height,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // const GameHeader(),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: width * 0.8,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: secondaryColor),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('CASHBACK', style: TextStyles.bodyText?.copyWith(color: whiteColor),),
+                      SizedBox(height: 10,),
+                      // Padding(
+                      //   padding: EdgeInsets.symmetric(horizontal: 20),
+                      //   child: Container(
+                      //     height: context.height * 0.08, // Use responsive_sizer for height
+                      //     decoration: BoxDecoration(
+                      //       color: primaryColor,
+                      //       borderRadius: BorderRadius.circular(10), // Use responsive_sizer for borderRadius
+                      //
+                      //     ),
+                      //     child: Padding(
+                      //       padding: EdgeInsets.symmetric(horizontal: 12),
+                      //       child: TabBar(
+                      //         padding: EdgeInsets.symmetric(
+                      //            vertical:  6,
+                      //         ), // Use responsive_sizer for padding
+                      //         controller: controller.tabController,
+                      //         labelColor: Colors.white,
+                      //         unselectedLabelColor: whiteColor,
+                      //
+                      //         indicator: BoxDecoration(
+                      //           borderRadius: BorderRadius.circular(4), // Use responsive_sizer for borderRadius
+                      //           color: Color(0xff2283F6),
+                      //         ),
+                      //         tabs:    [
+                      //           Padding(
+                      //             padding: EdgeInsets.symmetric(horizontal: 20),
+                      //             child: Tab(text: 'FORMS'),
+                      //           ),
+                      //           Padding(
+                      //             padding: EdgeInsets.symmetric(horizontal: 30),
+                      //             child: Tab(text: 'TO INVITE'),
+                      //           ),
+                      //           Padding(
+                      //             padding: EdgeInsets.symmetric(horizontal: 30),
+                      //             child: Tab(text: 'STATISTICS'),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(height: 20,),
+                      // SizedBox(
+                      //   height: 500,
+                      //   child: TabBarView(
+                      //     controller: controller.tabController,
+                      //     physics: const NeverScrollableScrollPhysics(), // Disable swiping between tabs
+                      //     children: [
+                      //      Text('Tab1'),
+                      //      Text('Tab2'),
+                      //      Text('Tab3')
+                      //     ],
+                      //   ),
+                      // ),
 
 
 
-                        CustomTabBar()
+                      CustomTabBar(width: width,)
 
 
 
 
 
-                      ],
-                    ),
+                    ],
                   ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
 class CustomTabBar extends StatefulWidget  {
+  double width;
+  CustomTabBar({required this.width,Key? key}) : super(key: key);
 
   @override
   _CustomTabBarState createState() => _CustomTabBarState();
@@ -176,7 +177,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
             Column(children: [
               SizedBox(height: 20,),
               Container(height: context.height * 0.08,
-                width: context.width * 0.8,
+                width: widget.width * 0.8,
                 decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(8)
@@ -190,7 +191,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                         leading:Image.asset(AppAssets.handIcon,height: context.height*0.05,width: context.height*0.05,),
                         title:Text('VIP 0 CASHBACK', style: TextStyles.smallWhiteText?.copyWith(fontSize: 16, color: whiteColor),),
                         trailing: SizedBox(
-                          width: context.width*0.3,
+                          width:  widget.width*0.3,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -219,7 +220,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                   itemBuilder: (ctxt,index){
                     return Container(
                       height: context.height * 0.2,
-                      width: context.width,
+                      width:  widget.width,
                       decoration: BoxDecoration(
                           color: Colors.black26,
                           borderRadius: BorderRadius.circular(20),
@@ -233,7 +234,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                   }),
               SizedBox(height: 30,),
               Container(height: context.height * 0.08,
-                width: context.width * 0.8,
+                width:  widget.width * 0.8,
                 decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(8)
@@ -247,7 +248,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                         // leading:Image.asset(AppAssets.handIcon,height: context.height*0.05,width: context.height*0.05,),
                         title:Text('Cashback accumulated Bonus History', style: TextStyles.smallWhiteText?.copyWith(fontSize: 16, color: whiteColor),),
                         trailing: SizedBox(
-                          width: context.width*0.3,
+                          width:  widget.width*0.3,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -263,7 +264,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
               ),
               SizedBox(height: 30,),
               Container(height: context.height * 0.05,
-                width: context.width * 0.8,
+                width:  widget.width * 0.8,
                 decoration: BoxDecoration(
                     color:redColor,
                     borderRadius: BorderRadius.circular(8)
@@ -297,7 +298,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
               children: [
                 SizedBox(height: 20,),
                 Container(height: context.height * 0.08,
-                  width: context.width * 0.8,
+                  width:  widget.width * 0.8,
                   decoration: BoxDecoration(
                       color: primaryColor,
                       borderRadius: BorderRadius.circular(8)
@@ -325,9 +326,9 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                     mainAxisAlignment:
                     MainAxisAlignment.center,
                     children: [
-                      CashBackContainer(width: context.width*0.3,),
-                      SizedBox(width: context.width*0.05,),
-                      CashBackContainer(width: context.width*0.3,
+                      CashBackContainer(width:  widget.width*0.3,),
+                      SizedBox(width:  widget.width*0.05,),
+                      CashBackContainer(width:  widget.width*0.3,
                         containerColor: Color(0xffF9BB8D),
                         title: 'SLOT',
                         numberPercent: '20',
@@ -337,7 +338,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                 ),
                 SizedBox(height: 20,),
                 Container(height: context.height * 0.08,
-                  width: context.width * 0.8,
+                  width:  widget.width * 0.8,
                   decoration: BoxDecoration(
                       color: primaryColor,
                       borderRadius: BorderRadius.circular(8)
@@ -352,7 +353,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                             leading:Image.asset(AppAssets.handIcon,height: context.height*0.05,width: context.height*0.05,),
                             title:Text('Daily discount', style: TextStyles.smallWhiteText?.copyWith(fontSize: 16, color: whiteColor),),
                             trailing: SizedBox(
-                              width: context.width*0.3,
+                              width:  widget.width*0.3,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -373,7 +374,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                     child: Text('How is it works?', style: TextStyles.smallWhiteText?.copyWith(fontSize: 16, color: whiteColor,fontWeight: FontWeight.bold),)),
                 SizedBox(height: 5,),
                 SizedBox(
-                    width: context.width*0.75,
+                    width:  widget.width*0.75,
                     child: Align(
                         alignment: Alignment.topLeft,
                         child: Text('You play and get some cash back based on the amount  wagered. This feature is available to everyone from the  moment they start using the platform. ', style: TextStyles.smallWhiteText?.copyWith(fontSize: 14, color: whiteColor),))),
@@ -386,13 +387,13 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                     mainAxisAlignment:
                     MainAxisAlignment.center,
                     children: [
-                      CashBackContainer(width: context.width*0.23,leftRoundness: 10,),
-                      CashBackContainer(width: context.width*0.23,
+                      CashBackContainer(width:  widget.width*0.23,leftRoundness: 10,),
+                      CashBackContainer(width:  widget.width*0.23,
                         containerColor: Color(0xffF9BB8D),
                         title: 'SLOT',
                         numberPercent: '20',
                       ),
-                      CashBackContainer(width: context.width*0.23,rightRoundness: 10,
+                      CashBackContainer(width:  widget.width*0.23,rightRoundness: 10,
                       ),
                     ],
                   ),
@@ -407,7 +408,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                 ),
                 SizedBox(height: 5,),
                 SizedBox(
-                    width: context.width*0.75,
+                    width:  widget.width*0.75,
                     child: Align(
                         alignment: Alignment.topLeft,
                         child: Text('The more you play and the higher your  VIP level, the more money you will  receive. Receive up to 20% cashback.', style: TextStyles.smallWhiteText?.copyWith(fontSize: 14, color: whiteColor),))),
@@ -424,8 +425,8 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                     ),
                     itemBuilder: (ctxt,index){
                       return Container(
-                        width: context.width * 0.13,
-                        height: context.width*0.13,
+                        width:  widget.width * 0.13,
+                        height:  widget.width*0.13,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: primaryColor
@@ -441,7 +442,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                                   AppAssets.
                                   imgCrown,
                                   height: Get.height * 0.02,
-                                  width: Get.width * 0.02,
+                                  width:  widget.width * 0.02,
                                   fit: BoxFit.contain,
                                 ),
                                 SizedBox(height: 10,),
@@ -497,7 +498,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                     Text('Common problem', style: TextStyles.smallWhiteText?.copyWith(fontSize: 16, color: whiteColor,fontWeight: FontWeight.bold),)
                 ),
                 SizedBox(
-                  height: context.height*0.9,
+                  height:selectedIndex==0?context.height*0: context.height*0.9,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -647,300 +648,6 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
 
               ],
             ),
-
-            // 3rd AppBar
-
-            // Column(children: [
-            //   SizedBox(height: 30,),
-            //
-            //   Container(
-            //     width: context.width,
-            //     decoration: BoxDecoration(
-            //       color: primaryColor,
-            //       borderRadius: BorderRadius.circular(6),
-            //     ),
-            //     child: Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: Column(
-            //         crossAxisAlignment: CrossAxisAlignment.start,
-            //         children: [
-            //           Text('TODAY PROFIT', style: TextStyles.buttonText?.copyWith(
-            //             fontSize: 16,
-            //           ),),
-            //           SizedBox(height: 6,),
-            //           Padding(
-            //             padding: const EdgeInsets.symmetric(horizontal: 20),
-            //             child: Row(
-            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //               children: [
-            //                 ClipRRect(
-            //                   borderRadius: BorderRadius.circular(10), // Use responsive_sizer for borderRadius
-            //                   child: SizedBox(
-            //                       width: context.width * 0.28,
-            //                       child: Stack(
-            //                         children: [
-            //                           LinearProgressIndicator(
-            //                             minHeight:25,
-            //                             // Use responsive_sizer for minHeight
-            //                             backgroundColor: secondaryColor,
-            //
-            //                             valueColor:
-            //                             const AlwaysStoppedAnimation<
-            //                                 Color>(
-            //                                 Color(0xff2283F6)),
-            //                             value: 0.6,
-            //                           ),
-            //                           Center(child: Padding(
-            //                             padding: const EdgeInsets.all(4.0),
-            //                             child: Text('Invitation Bonus', style: TextStyles.buttonText?.copyWith(
-            //                                 fontSize: 12
-            //                             ),),
-            //                           ))
-            //                         ],
-            //                       )
-            //                   ),
-            //                 ),
-            //                 ClipRRect(
-            //                   borderRadius: BorderRadius.circular(10), // Use responsive_sizer for borderRadius
-            //                   child: SizedBox(
-            //                       width: context.width * 0.28,
-            //                       child: Stack(
-            //                         children: [
-            //                           LinearProgressIndicator(
-            //                             minHeight:25,
-            //                             // Use responsive_sizer for minHeight
-            //                             backgroundColor: secondaryColor,
-            //
-            //                             valueColor:
-            //                             const AlwaysStoppedAnimation<
-            //                                 Color>(
-            //                                 Color(0xff2283F6)),
-            //                             value: 0.6,
-            //                           ),
-            //                           Center(child: Padding(
-            //                             padding: const EdgeInsets.all(4.0),
-            //                             child: Text('Betting commission', style: TextStyles.buttonText?.copyWith(
-            //                                 fontSize: 12
-            //                             ),),
-            //                           ))
-            //                         ],
-            //                       )
-            //                   ),
-            //                 ),
-            //               ],),
-            //           ),
-            //           SizedBox(height: 10,),
-            //           Padding(
-            //             padding: const EdgeInsets.symmetric(horizontal: 12),
-            //             child: Row(
-            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //               children: [
-            //
-            //                 Column(children: [
-            //                   Text('PROFIT TODAY', style: TextStyles.buttonText?.copyWith(
-            //                     fontSize:16,
-            //                   ),),
-            //                   Text('R\$0', style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:16,
-            //                       color: Color(0xffFFA101)
-            //
-            //                   ),),
-            //
-            //
-            //                 ],),
-            //                 Column(children: [
-            //                   Text('Betting commission', style: TextStyles.buttonText?.copyWith(
-            //                     fontSize:16,
-            //                   ),),
-            //                   Text('R\$0', style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:16,
-            //                       color: Color(0xffFFA101)
-            //
-            //                   ),),
-            //
-            //
-            //                 ],),
-            //                 Column(
-            //                   children: [
-            //                     Text('Invitation Bonus', style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:16,
-            //                     ),),
-            //                     Text('R\$0', style: TextStyles.buttonText?.copyWith(
-            //                         fontSize:16,
-            //                         color: Color(0xffFFA101)
-            //
-            //                     ),),
-            //
-            //
-            //                   ],),
-            //
-            //
-            //               ],
-            //             ),
-            //           ),
-            //
-            //
-            //           SizedBox(height: 20,),
-            //           Row(
-            //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //             children: [
-            //               Column(
-            //                 crossAxisAlignment: CrossAxisAlignment.start,
-            //                 children: [
-            //                   Text("Your profit will consist of two parts, namely [Invitation Bonus]\n"
-            //                       " [Betting Commission]",
-            //                     style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:12,
-            //
-            //                     ),),
-            //                   Text("Betting Commission:",
-            //                     style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:12,
-            //
-            //                     ),),
-            //                   Text(" This will be your main income and you will receive a different\n"
-            //                       "percentage of every bet you invite players to place in commission\n"
-            //                       "Invitation Bonus:"
-            //                     ,
-            //                     style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:12,
-            //
-            //                     ),),
-            //                 ],
-            //               ),
-            //               Column(
-            //                 children: [
-            //                   Text("The user you invite to deposit for the first time, you will receive\n cash bonus of R\$12",
-            //                     style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:12,
-            //
-            //                     ),),
-            //                 ],
-            //               ),
-            //
-            //
-            //             ],
-            //           ),
-            //
-            //
-            //           SizedBox(height: 20,),
-            //
-            //         ],
-            //       ),
-            //     ),
-            //   ),
-            //
-            //   SizedBox(height: 30,),
-            //   Container(
-            //     width: context.width,
-            //     decoration: BoxDecoration(
-            //         color: primaryColor,
-            //         borderRadius: BorderRadius.circular(8)
-            //     ),
-            //     child: Row(
-            //       children: [
-            //         Column(
-            //           children: [
-            //             Text('TOTAL PROFIT' , style: TextStyles.buttonText?.copyWith(
-            //                 fontSize: 16
-            //             ),),
-            //             Container(
-            //               height: context.height * 0.1,
-            //               width: context.width * 0.1,
-            //               color: whiteColor,
-            //               child: Center(
-            //                 child: Text('Image here'),
-            //               ),
-            //             ),
-            //
-            //           ],
-            //         ),
-            //         SizedBox(width: 50,),
-            //         Column(
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //           children: [
-            //             SizedBox(
-            //               width: context.width*0.6,
-            //               child: Row(
-            //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                 children: [
-            //                   Column(children: [
-            //                     Text('Guest Users', style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:16,
-            //                     ),),
-            //                     Text('0', style: TextStyles.buttonText?.copyWith(
-            //                         fontSize:16,
-            //                         color: Color(0xffFFA101)
-            //                     ),),
-            //
-            //
-            //                   ],),
-            //                   Column(children: [
-            //                     Text('Deposited Users', style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:16,
-            //                     ),),
-            //                     Text('0', style: TextStyles.buttonText?.copyWith(
-            //                         fontSize:16,
-            //                         color: Color(0xffFFA101)
-            //
-            //                     ),),
-            //
-            //
-            //                   ],),
-            //
-            //                   Column(children: [
-            //                     Text('Bonus Today', style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:16,
-            //                     ),),
-            //                     Text('0', style: TextStyles.buttonText?.copyWith(
-            //                         fontSize:16,
-            //                         color: Color(0xffFFA101)
-            //
-            //                     ),),
-            //
-            //
-            //                   ],),
-            //
-            //                   Column(children: [
-            //                     Text('Yesterday Bonus', style: TextStyles.buttonText?.copyWith(
-            //                       fontSize:16,
-            //                     ),),
-            //                     Text('0', style: TextStyles.buttonText?.copyWith(
-            //                         fontSize:16,
-            //                         color: Color(0xffFFA101)
-            //
-            //                     ),),
-            //
-            //
-            //                   ],),
-            //
-            //
-            //                 ],
-            //               ),
-            //             ),
-            //             SizedBox(height: 20,),
-            //             Padding(
-            //               padding: const EdgeInsets.only(left: 60),
-            //               child: Text(
-            //                 'Are you a blogger with a large audience and large following?\n'
-            //                     'We offer you a partnership program with a special referral bonus.Please contact our manager to discuss terms.\n'
-            //                     'https://wa.me/message/L7OEABEFPVD4D1Important:\n'
-            //                     ' Only users who have passed the  requirements and been approved by their\n'
-            //                     ' managercan participate in the program.'
-            //
-            //
-            //                 , style: TextStyles.buttonText?.copyWith(
-            //                 fontSize:12,
-            //               ),),
-            //             ),
-            //
-            //           ],
-            //         )
-            //       ],
-            //     ),
-            //   )
-            //
-            // ],)
           ],
         ),
       ],

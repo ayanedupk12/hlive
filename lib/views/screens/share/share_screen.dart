@@ -10,7 +10,8 @@ import '../game/game_screen.dart';
 
 
 class ShareScreen extends StatelessWidget {
-  ShareScreen({Key? key}) : super(key: key);
+  double width;
+  ShareScreen({required this.width,Key? key}) : super(key: key);
 
   final ShareScreenController controller = Get.put(ShareScreenController());
 
@@ -27,7 +28,7 @@ class ShareScreen extends StatelessWidget {
               height: 20,
             ),
             Container(
-              width: context.width * 0.8,
+              width: width * 0.8,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: secondaryColor),
@@ -96,7 +97,7 @@ class ShareScreen extends StatelessWidget {
 
 
 
-                      CustomTabBar()
+                      CustomTabBar(width: width,)
 
 
 
@@ -114,6 +115,9 @@ class ShareScreen extends StatelessWidget {
   }
 }
 class CustomTabBar extends StatefulWidget  {
+    double width;
+  CustomTabBar({required this.width,Key? key}) : super(key: key);
+
 
   @override
   _CustomTabBarState createState() => _CustomTabBarState();
@@ -173,7 +177,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
             Column(children: [
               SizedBox(height: 20,),
               Container(height: context.height * 0.08,
-                width: context.width * 0.8,
+                width: widget.width * 0.8,
                 decoration: BoxDecoration(
                     color: Color(0xff2283F6),
                     borderRadius: BorderRadius.circular(8)
@@ -207,7 +211,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
               ),
               SizedBox(height: 30,),
               Container(height: context.height * 0.08,
-                width: context.width * 0.8,
+                width: widget.width * 0.8,
                 decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(8)
@@ -237,7 +241,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
               ),
               SizedBox(height: 30,),
               Container(height: context.height * 0.08,
-                width: context.width * 0.8,
+                width: widget.width * 0.8,
                 decoration: BoxDecoration(
                     color:redColor,
                     borderRadius: BorderRadius.circular(8)
@@ -267,7 +271,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
               children: [
                 SizedBox(height: 30,),
                 Container(
-                  width: context.width,
+                  width: widget.width,
                   decoration: BoxDecoration(
                       color: primaryColor,
                       borderRadius: BorderRadius.circular(6)
@@ -301,7 +305,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
 
                                     Container(
                                       height: 40,
-                                      width: context.width * 0.3,
+                                      width: widget.width * 0.3,
                                       decoration: BoxDecoration(
                                           color: secondaryColor,
                                           borderRadius: BorderRadius.circular(4)
@@ -340,7 +344,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
 
                                     Container(
                                       height: 40,
-                                      width: context.width * 0.3,
+                                      width: widget.width * 0.3,
                                       decoration: BoxDecoration(
                                           color: secondaryColor,
                                           borderRadius: BorderRadius.circular(4)
@@ -378,7 +382,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                 SizedBox(height: 30,),
                 Container(
                   height: context.height * 0.5,
-                  width: context.width,
+                  width: widget.width,
                   decoration: BoxDecoration(
                       color: primaryColor,
                       borderRadius: BorderRadius.circular(6)
@@ -471,7 +475,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
               SizedBox(height: 30,),
 
               Container(
-                width: context.width,
+                width: widget.width,
                 decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.circular(6),
@@ -493,7 +497,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                             ClipRRect(
                               borderRadius: BorderRadius.circular(10), // Use responsive_sizer for borderRadius
                               child: SizedBox(
-                                  width: context.width * 0.28,
+                                  width: widget.width * 0.28,
                                   child: Stack(
                                     children: [
                                       LinearProgressIndicator(
@@ -520,7 +524,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                             ClipRRect(
                               borderRadius: BorderRadius.circular(10), // Use responsive_sizer for borderRadius
                               child: SizedBox(
-                                  width: context.width * 0.28,
+                                  width: widget.width * 0.28,
                                   child: Stack(
                                     children: [
                                       LinearProgressIndicator(
@@ -649,7 +653,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
 
               SizedBox(height: 30,),
               Container(
-                width: context.width,
+                width: widget.width,
                 decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(8)
@@ -667,7 +671,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
 
                           AppAssets.imgProfit,
                           height: context.height * 0.1,
-                          width: context.width * 0.1,
+                          width: widget.width* 0.1,
                           fit: BoxFit.contain,
                         ),
 
@@ -678,7 +682,7 @@ class _CustomTabBarState extends State<CustomTabBar> with SingleTickerProviderSt
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          width: context.width*0.6,
+                          width: widget.width*0.6,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
