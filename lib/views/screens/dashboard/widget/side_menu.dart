@@ -271,6 +271,7 @@ final List<DrawerItem> drawerItems = [
     svgSrc: AppAssets.icBonus,
     banner: AppAssets.ban3
   ),
+  DrawerItem(title: "Read More", svgSrc: AppAssets.icHome),
   DrawerItem(title: "Home", svgSrc: AppAssets.icHome),
   DrawerItem(title: "SHARE", svgSrc: AppAssets.icShare),
   DrawerItem(

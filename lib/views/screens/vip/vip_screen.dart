@@ -950,6 +950,7 @@ class DepositBetWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(right: 10),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -973,7 +974,7 @@ class DepositBetWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(width: width * 0.1),
+                SizedBox(width: width * 0.05),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
