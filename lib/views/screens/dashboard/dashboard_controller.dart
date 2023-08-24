@@ -167,103 +167,114 @@ class VipHeader extends StatelessWidget {
   final dashBoardController=Get.find<DashboardController>();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: context.height * 0.12,
-      width: context.width,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: secondaryColor),
-      child: ListTile(
+    return
+      Container(
+          height: 83,
+          width: context.width,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15), color: secondaryColor),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            child: Center(
+              child: ListTile(
+                leading: IconButton(
+                    onPressed: (){
+                      dashBoardController.onOffDrawer();
+                    },
+                    icon: Image.asset(dashBoardController.showDrawer?AppAssets.drawerClose:AppAssets.drawerOpen,height: 20,width: 40,)),
 
-        leading: Padding(
-          padding: const EdgeInsets.all(15.0,),
-          child: IconButton(
-              onPressed: (){
-                dashBoardController.onOffDrawer();
-              },
-              icon: Icon(Icons.menu,color: Colors.white,size: 35,)),
-        ),
-
-        trailing: SizedBox(
-          width: context.width/2,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Row(
-                children: [
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    '100% BONUS',
-                    style:
-                    TextStyle(color: buttonColor, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              Container(
-                height: Get.height * 0.06,
-                width: Get.width * 0.15,
-                decoration: BoxDecoration(
-                    color: primaryColor, borderRadius: BorderRadius.circular(10)),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "R\$10",
-                        style: TextStyle(
-                            color: whiteColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
-                      ),
-                      Container(
-                        height: Get.height * 0.06,
-                        width: Get.width * 0.08,
-                        decoration: BoxDecoration(
-                          color: redColor,
-                        ),
-                        child: Row(
+                trailing: SizedBox(
+                  width: context.width/1.5,
+                  child:SizedBox(
+                    width: context.width/2,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Row(
                           children: [
                             SizedBox(
-                              height: 30,
-                              width: 45,
-                              child: Image.asset(
-                                AppAssets.imgDeposit,
-                                fit: BoxFit.contain,
-                              ),
+                              width: 20,
                             ),
-                            const Text(
-                              "Deposit",
-                              style: TextStyle(
-                                  color: whiteColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14),
+                            Text(
+                              '100% BONUS',
+                              style:
+                              TextStyle(color: buttonColor, fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
-                      )
-                    ],
+                        SizedBox(
+                          width: 30,
+                        ),
+                        Container(
+                          height: 50,
+                          // width: Get.width * 0.15,
+                          decoration: BoxDecoration(
+                              color: primaryColor, borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),topLeft:Radius.circular(10))),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  width: 80,
+                                  child: Center(
+                                    child: Text(
+                                      "R\$10",
+                                      style: TextStyle(
+                                          color: whiteColor,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 50,
+                                  width: 116,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),topRight:Radius.circular(10)),
+                                    color: redColor,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                        height: 30,
+                                        width: 45,
+                                        child: Image.asset(
+                                          AppAssets.imgDeposit,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                      const Text(
+                                        "Deposit",
+                                        style: TextStyle(
+                                            color: whiteColor,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+
+                        InkWell(
+                            onTap: (){
+                              Get.dialog(ProfileDialogue());
+                            },
+                            child:  Profile())
+                      ],
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
-                width: 20,
-              ),
-
-              InkWell(
-                  onTap: (){
-                    Get.dialog(ProfileDialogue());
-                  },
-                  child:  Profile())
-            ],
-          ),
-        ),
-      ),
-    );
+            ),
+          )
+      );
   }
 }
 class Profile extends StatelessWidget {
@@ -274,8 +285,8 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.06,
-      width: Get.width * 0.1,
+      height:50,
+      width: 134,
       decoration: BoxDecoration(
           color: primaryColor, borderRadius: BorderRadius.circular(10)),
       child: Padding(
